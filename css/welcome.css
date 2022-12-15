@@ -1,0 +1,45 @@
+@font-face {
+  font-family: font;
+  src: url(./fonts/Laila-SemiBold.ttf);
+}
+
+h1 {
+  text-align: center;
+  margin: 1em;
+  font-size: 50px;
+}
+
+h1 {
+  font-family: font;
+  color: #540375;
+}
+
+.fadeIn {
+  background-color: #ffbf00;
+  animation: fadeIn 2s forwards;
+  cursor: wait;
+  width: 415px;
+  height: 100%;
+}
+
+.fadeout {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
