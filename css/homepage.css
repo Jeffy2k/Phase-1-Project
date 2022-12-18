@@ -1,0 +1,290 @@
+@font-face {
+  font-family: Satisfy;
+  src: url(./fonts/Satisfy-Regular.ttf);
+}
+@font-face {
+  font-family: Laila-Bold;
+  src: url(./fonts/Laila-Bold.ttf);
+}
+@font-face {
+  font-family: Italianno;
+  src: url(./fonts/Italianno-Regular.ttf);
+}
+@font-face {
+  font-family: Karla;
+  src: url(./fonts/Karla-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Sacramento;
+  src: url(./fonts/Sacramento-Regular.ttf);
+}
+@font-face {
+  font-family: LobsterTwo;
+  src: url(./fonts/LobsterTwo-Bold.ttf);
+}
+/* 
+  .homePage{
+      background: url("https://i.pinimg.com/564x/2f/73/14/2f73140bb52576ae3c451abe7f522865.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  } */
+#mainArea {
+  margin-top: 0;
+}
+* {
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+#header {
+  margin-top: 0;
+  background-image: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1625px;
+  height: 790px;
+}
+nav {
+  margin-bottom: 3em;
+  width: 100%;
+  display: inline-block;
+}
+
+nav ul {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+#first,
+#second,
+#third {
+  top: 0;
+  margin-top: 2em;
+  position: relative;
+}
+#last {
+  margin-top: 2em;
+}
+nav ul li a {
+  font-family: Laila-Bold;
+  display: block;
+  text-align: center;
+  padding: 10px 40px 10px 40px;
+  text-decoration: none;
+  color: antiquewhite;
+  font-size: 1.3em;
+  transition: 0.2s all ease-in-out;
+}
+nav ul li a:hover {
+  color: #f49d1a;
+}
+nav ul li a:active {
+  scale: 0.95;
+}
+#webname {
+  font-family: Laila-Bold;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-size: 5em;
+  color: orange;
+}
+
+#slogan {
+  color: antiquewhite;
+  text-align: center;
+  font-size: 1.7em;
+  font-family: LobsterTwo;
+}
+
+/*what recipehub offers*/
+#offerCont {
+  width: 60%;
+  height: 650px;
+  content: "hi";
+  position: relative;
+  margin-left: 20%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+.offerContent {
+  background-image: url("https://i.pinimg.com/564x/56/ec/a1/56eca102fe0a327ecb077ff22c3e41ea.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.offerContent:hover {
+  scale: 1.01;
+}
+.offerContent2 {
+  background-image: url("https://i.pinimg.com/564x/c6/d5/89/c6d589c38cdc7d4191afb938bd38db22.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#services {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  margin-left: 20%;
+  margin-top: 65%;
+  font-size: 5em;
+  font-family: Sacramento;
+  color: #ff9f29;
+}
+
+#leftBtn {
+  position: absolute;
+  margin-top: 29%;
+  top: 15px;
+  left: 16px;
+  font-size: 15px;
+  color: antiquewhite;
+  border: none;
+  background-color: black;
+  padding: 1em;
+  width: 3em;
+}
+
+#rightBtn {
+  margin-top: 29%;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 15px;
+  color: antiquewhite;
+  border: none;
+  background-color: black;
+  padding: 1em;
+  width: 3em;
+}
+#rightBtn:hover,
+#leftBtn:hover {
+  background-color: #434242;
+}
+#rightBtn:active,
+#leftBtn:active {
+  scale: 0.95;
+}
+#offerPic {
+  width: 77%;
+  height: 700px;
+}
+
+#offer {
+  color: black;
+  font-family: LobsterTwo;
+  font-size: 4em;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+/* initial info */
+#aboutBox {
+  margin-top: 5em;
+  display: inline-flex;
+}
+#aboutPic {
+  background-image: url("https://i.pinimg.com/564x/e2/4a/57/e24a573bd737ce66a274e0769687adfe.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 5em;
+  margin-top: 4em;
+  background-color: aqua;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+}
+#about {
+  margin-left: 6em;
+  margin-top: 4em;
+  height: 400px;
+  width: 900px;
+  text-align: center;
+  padding: 2em;
+}
+#aboutTitle {
+  color: black;
+  font-size: 4em;
+  margin-bottom: 0.5em;
+  font-family: LobsterTwo;
+}
+#aboutDetails {
+  font-family: Karla;
+  font-size: 23px;
+  line-height: 1.5em;
+}
+
+/* contact info */
+#mainContact {
+  padding-left: 6em;
+  margin-top: 6em;
+  background-color: bisque;
+  height: auto;
+  width: auto;
+}
+.contactChild {
+  display: inline-block;
+  background-color: azure;
+  height: 400px;
+  width: 650px;
+}
+#numbers {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-bottom: 2.5em;
+  margin: 2em;
+  height: auto;
+}
+#socialplatforms {
+  margin: 2em;
+  padding-bottom: 2.5em;
+
+  height: auto;
+}
+#call {
+  margin: 0.5em 0 0 3.2em;
+  font-size: 5em;
+}
+.numH2 {
+  margin-top: 0.5em;
+  margin-left: 7em;
+  font-size: 2em;
+}
+#numbers p {
+  margin-top: 0.5em;
+  font-size: 1.6em;
+  font-family: Karla;
+}
+#tellNo {
+  margin-top: 1em;
+  margin-left: 6em;
+  font-size: 2em;
+}
+#socialplatforms p {
+  margin-top: 0.5em;
+  font-size: 1.6em;
+  font-family: Karla;
+  height: auto;
+}
+.mail {
+  margin: 1.5em 0.6em 0em 13em;
+  font-size: 0.7em;
+}
+.mail h5 {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  font-size: 2em;
+}
+.social {
+  margin-right: 1.5em;
+  height: 32px;
+  width: 32px;
+}
+#mail1 {
+  margin-top: 3em;
+}

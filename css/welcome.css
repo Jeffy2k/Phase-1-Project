@@ -17,7 +17,7 @@ h1 {
   background-color: #ffbf00;
   animation: fadeIn 2s forwards;
   cursor: wait;
-  width: 415px;
+  width: 425px;
   height: 100%;
 }
 @keyframes fadeIn {
