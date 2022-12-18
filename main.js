@@ -90,10 +90,10 @@ function homePage() {
     <nav>
         <ul>
           <li id="first">
-              <a href="">Home</a>
+              <a onclick = "homePage()" href="">Home</a>
           </li>
-          <li id="second">
-              <a onclick = "menupage()"href="">Recipes</a>
+          <li onclick = "menuPage()" id="second">
+              <a onclick = "menuPage()" href="#">Recipes</a>
           </li>
           <li id="third">
               <a href="#aboutBox">About Us</a>
@@ -161,4 +161,79 @@ function homePage() {
     document.getElementById("offerCont").classList.add("offerContent");
     document.getElementById("services").innerText = "A variety of Recipes";
   });
+}
+
+//Appends the Menu Page
+function menuPage(){
+  let body = document.querySelector('body');
+  body.innerHTML = ""
+  body.classList.add('menuPage')
+  body.innerHTML = `
+  <div id="header">
+
+  <nav>
+    <ul>
+
+        <li id="first">
+            <a href="">Home</a>
+        </li>
+        <li id="second">
+            <a href="">Menu</a>
+        </li>
+        <li id="third">
+            <a href="">About Us</a>
+        </li>
+        <li id="last">
+            <a href="">Contact Us</a>
+        </li>
+    </ul>
+</nav>
+
+<div id="webname">
+  <h2>Recipes</h2>
+</div>
+</div>
+<div id="topContainer">
+ <div id="top1">
+<input type="search" id = "itemSearch">
+</input>
+ <button onclick="fetchFoodByIngredients()" id="btnSearch">Search by ingredients</button>
+ <button onclick="searchVideos()" id="btnSearch2">Search Video</button>
+</div>
+<div id="top">
+</div>
+</div>
+<div id = "mainArea">
+</div>
+  `
+let mainArea = document.getElementById("mainArea");
+mainArea.innerHTML = `
+<div class="grid-container">
+    <div onclick = 'getValue("breakfast")'class="grid-item">
+        <div class = "pic" id="breakfast1" >
+            <h3 id="label">Breakfast</h3>
+        </div>
+    </div>
+    <!-- <div onclick = 'getValue()' class="grid-item">
+        <div class = "pic"  id="lunch1" >
+        <h3 id="label">Lunch</h3>
+        </div>
+    </div>   -->
+    <div onclick = 'getValue("burgers")' class="grid-item">
+        <div class = "pic" id="burgers1" >
+        <h3 id="label">burgers</h3>
+    </div>
+    </div>
+    <div onclick = 'getValue("icecream")' class="grid-item">
+        <div class = "pic"  id="icecream1" >
+        <h3 id="label">Icecream</h3>
+    </div>
+    </div>
+    <div onclick = 'getValue("drinks")' class="grid-item">
+        <div class = "pic"  id="drinks1" >
+        <h3 id ="label">Drinks</h3>
+    </div>
+    </div>
+  </div>
+`
 }
