@@ -11,6 +11,7 @@ function appendLoginPage() {
         <div id="replace">
           <div id="info">
             <h2 id="h2">Recipehub</h2>
+            <h3 style = "font-size:1.5em">Login</h3>
             <h3 id="h3">Welcome to recipehub</h3>
             <h4 id="error"></h4>
           </div>
@@ -44,21 +45,20 @@ function appendLoginPage() {
         </div>
       </div>
     </div>
-
-`;
-  document.getElementById("btn").addEventListener("click", (e) => {
-    e.preventDefault();
-    body.classList.add("waiting");
-    let name = document.getElementById("fname").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    if (name !== "" && email !== "" && password !== "") {
-      setTimeout(() => {
-        welcomeMessage(name);
-      }, 2000);
-    } else if (name === "" || email === "" || password === "") {
-      document.getElementById("error").innerHTML = "*please fill out all areas";
-    }
+    `;
+    document.getElementById("btn").addEventListener("click", (e) => {
+      e.preventDefault();
+      let name = document.getElementById("fname").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      if (name !== "" && email !== "" && password !== "") {
+            document.getElementById("replace").classList.add("waiting");
+            setTimeout(() => {
+              welcomeMessage(name);
+            }, 2000);
+        } else if (name === "" || email === "" || password === "") {
+            document.getElementById("error").innerHTML = "*please fill out all areas";
+        }
   });
 }
 appendLoginPage();
@@ -68,12 +68,11 @@ function welcomeMessage(name) {
   document.getElementById("replace");
   replace.innerHTML = "";
   replace.innerHTML = `
-     <div class = "fadeIn">
+    <div class = "fadeIn">
       <br>
       <br> 
       <h1 id="message">Welcome  ${name}</h1>
       <i id="done" class="material-icons" style="font-size:150px">done</i>
-   
     </div>
     `;
 }

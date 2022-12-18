@@ -107,13 +107,16 @@ input[type="number"]:focus {
   scale: 1.05;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
+/* login form area */
 #info {
-  width: ;
   padding-top: 3em;
   text-align: center;
   height: 31.5%;
   background-color: #ffbf00;
 }
+
+/* checkbox and its content */
 .checkbox input {
   position: absolute;
   opacity: 1;
@@ -123,10 +126,6 @@ input[type="number"]:focus {
   top: -5px;
   transform: translate(-138px);
 }
-.checkbox input:checked {
-  background-color: none;
-}
-
 .checkbox {
   font-family: font2;
   margin-top: 1em;
@@ -143,22 +142,28 @@ input[type="number"]:focus {
   margin-left: 1.9em;
   margin-top: 1em;
 }
+
+/* forgot password link */
 a:hover {
   color: #dc3535;
 }
+
+/* recipehub title */
 #h2 {
   font-size: 40px;
   margin: 0;
   font-family: myFirstFont;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
 
+ /* welcome to recipehub */
 #h3 {
   margin: 0;
   font-size: 20px;
   color: #36454f;
 }
 
+/* input areas */
 #person,
 #pass,
 #email {
@@ -170,10 +175,15 @@ a:hover {
 .waiting {
   cursor: wait;
 }
+
+/* error msg */
 #error {
+  margin-top: 0.2em;
   color: red;
   margin-right: 10em;
 }
+
+/* tick mark */
 #done {
   margin-left: 1em;
   margin-top: 0.5em;
