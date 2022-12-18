@@ -90,9 +90,9 @@ function homePage() {
     <nav>
         <ul>
           <li id="first">
-              <a onclick = "homePage()" href="">Home</a>
+          <a onclick = "returnHome()" href="#">Home</a>
           </li>
-          <li onclick = "menuPage()" id="second">
+          <li id="second">
               <a onclick = "menuPage()" href="#">Recipes</a>
           </li>
           <li id="third">
@@ -149,6 +149,9 @@ function homePage() {
   </div>
   </div>
   `;
+  // document.getElementsByClassName('return').addEventListener('click',()=>{
+  //   console.log('clicked');
+  // })
   document.getElementById("rightBtn").addEventListener("click", () => {
     console.log("clicked");
     document.getElementById("offerCont").classList.remove("offerContent");
@@ -163,11 +166,18 @@ function homePage() {
   });
 }
 
+//return home page
+function returnHome() {
+   console.log("clicked ")
+  document.querySelector("body").innerHTML = "";
+  return homePage();
+}
+
 //Appends the Menu Page
-function menuPage(){
-  let body = document.querySelector('body');
-  body.innerHTML = ""
-  body.classList.add('menuPage')
+function menuPage() {
+  let body = document.querySelector("body");
+  body.innerHTML = "";
+  body.classList.add("menuPage");
   body.innerHTML = `
   <div id="header">
 
@@ -175,16 +185,16 @@ function menuPage(){
     <ul>
 
         <li id="first">
-            <a href="">Home</a>
+        <a onclick = "returnHome()" href="#">Home</a>
         </li>
         <li id="second">
-            <a href="">Menu</a>
+        <a onclick = "menuPage()" href="#">Recipes</a>
         </li>
         <li id="third">
-            <a href="">About Us</a>
+            <a onclick = "returnHome()" href="#aboutBox">About Us</a>
         </li>
         <li id="last">
-            <a href="">Contact Us</a>
+            <a onclick = "returnHome()" href="#contacts">Contact Us</a>
         </li>
     </ul>
 </nav>
@@ -205,9 +215,9 @@ function menuPage(){
 </div>
 <div id = "mainArea">
 </div>
-  `
-let mainArea = document.getElementById("mainArea");
-mainArea.innerHTML = `
+  `;
+  let mainArea = document.getElementById("mainArea");
+  mainArea.innerHTML = `
 <div class="grid-container">
     <div onclick = 'getValue("breakfast")'class="grid-item">
         <div class = "pic" id="breakfast1" >
@@ -235,5 +245,5 @@ mainArea.innerHTML = `
     </div>
     </div>
   </div>
-`
+`;
 }

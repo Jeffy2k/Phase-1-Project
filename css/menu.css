@@ -1,280 +1,279 @@
 @font-face {
-    font-family: LobsterTwo;
-    src: url(./fonts/LobsterTwo-Bold.ttf);
-  }
-  @font-face {
-    font-family: Laila-Bold;
-    src: url(./fonts/Laila-Bold.ttf);
-  }
-  .menuPage{
-      background: url("ttps://i.pinimg.com/564x/2f/73/14/2f73140bb52576ae3c451abe7f522865.jpg");
-      height: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-  #mainArea{
-    margin-top: 0;
-  }
-  
-  * {
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-  #header {
-    margin-top: 0;
-    background-image: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1625px;
-    height: 650px;
-  }
-  nav {
-    width: 100%;
-    display: inline-block;
-  }
-  
-  nav ul {
-    margin-bottom: 2em;
-    display: flex;
-  }
-  
-  #first,
-  #second,
-  #third {
-    top: 0;
-    margin-top: 2em;
-    position: relative;
-  }
-  #last {
-    margin-top: 2em;
-  }
-  nav ul li a {
-    font-family: Laila-Bold;
-    display: block;
-    text-align: center;
-    padding: 10px 40px 10px 40px;
-    text-decoration: none;
-    color: antiquewhite;
-    font-size: 1.3em;
-    transition: 0.2s all ease-in-out;
-  }
-  nav ul li a:hover {
-    color: #f49d1a;
-  }
-  nav ul li a:active {
-    scale: 0.95;
-  }
-  #webname {
-    font-family: LobsterTwo;
-    width: 60%;
-    margin: auto;
-    text-align: center;
-    font-size: 4em;
-    color: #ff7000;
-  }
-  .grid-container {
-    margin-left: 4em;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-  }
-  .grid-item {
-    margin: 2em;
-    content-visibility: 0;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    height: 450px;
-    width: 400px;
-    background-color: #ffdead;
-    padding: 0;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    top: 0;
-  }
-  .grid-item:hover {
-    content: "something";
-    top: -15px;
-  }
-  .grid-item:active {
-    scale: 0.9;
-  }
-  #top {
-    height: 70px;
-  }
-  .pic {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  
-  #breakfast1 {
-    position: absolute;
-    background-image: url("https://i.pinimg.com/564x/b8/3c/c4/b83cc424ee1986d93e5c3857acad445d.jpg");
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  
-  #icecream1 {
-    background-image: url("https://i.pinimg.com/564x/96/0e/f5/960ef5a2c44569047223be251bd6c8e6.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  #lunch1 {
-    background-image: url("https://i.pinimg.com/564x/c5/3a/b7/c53ab79f54fb4fedcca9c0f85960bd46.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  #burgers1 {
-    background-image: url("https://i.pinimg.com/564x/a8/a6/3e/a8a63efb6d0f05517badbdcb02fd6ada.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  #drinks1 {
-    background-image: url("https://i.pinimg.com/564x/f1/a7/58/f1a75858899c98bcf01990dbc1f33005.jpg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  #topContainer{
-    margin: 0;
-  }
-  
-  
-  #label {
-    font-family: Laila-Bold;
-    padding: 0px 15px 0px 15px;
-    margin-top: 11em;
-    color: #c1e1c1;
-    float: left;
-    font-weight: 900;
-    margin-left: 0.3em;
-  }
-  #itemSearch{
-    /* position: relative; */
-    margin-right:0.5em;
-    border: none;
-    background-color: lightgrey;
-    border-radius: 60px;
-    height: 60px;
-    font-size: 2em;
-    padding:0.5em;
-  }
-  #itemSearch:hover{
-    background-color: lightgrey;
-  }
-  #itemSearch:focus{
-   border:none;
-  }
-  
-  #top1{
-    margin-top: 2em;
-    float: right;
-  }
-  
-  #top1{
+  font-family: LobsterTwo;
+  src: url(./fonts/LobsterTwo-Bold.ttf);
+}
+@font-face {
+  font-family: Laila-Bold;
+  src: url(./fonts/Laila-Bold.ttf);
+}
+.menuPage {
+  background: url("ttps://i.pinimg.com/564x/2f/73/14/2f73140bb52576ae3c451abe7f522865.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#mainArea {
+  margin-top: 0;
+}
+
+* {
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+#header {
+  margin-top: 0;
+  background-image: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1625px;
+  height: 650px;
+}
+nav {
+  width: 100%;
+  display: inline-block;
+}
+
+nav ul {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+#first,
+#second,
+#third {
+  top: 0;
+  margin-top: 2em;
+  position: relative;
+}
+#last {
+  margin-top: 2em;
+}
+nav ul li a {
+  font-family: Laila-Bold;
+  display: block;
+  text-align: center;
+  padding: 10px 40px 10px 40px;
+  text-decoration: none;
+  color: antiquewhite;
+  font-size: 1.3em;
+  transition: 0.2s all ease-in-out;
+}
+nav ul li a:hover {
+  color: #f49d1a;
+}
+nav ul li a:active {
+  scale: 0.95;
+}
+#webname {
+  font-family: LobsterTwo;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-size: 4em;
+  color: #ff7000;
+}
+.grid-container {
+  margin-left: 4em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  margin: 2em;
+  content-visibility: 0;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 450px;
+  width: 400px;
+  background-color: #ffdead;
+  padding: 0;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  top: 0;
+}
+.grid-item:hover {
+  content: "something";
+  top: -15px;
+}
+.grid-item:active {
+  scale: 0.9;
+}
+#top {
+  height: 70px;
+}
+.pic {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#breakfast1 {
+  position: absolute;
+  background-image: url("https://i.pinimg.com/564x/b8/3c/c4/b83cc424ee1986d93e5c3857acad445d.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#icecream1 {
+  background-image: url("https://i.pinimg.com/564x/96/0e/f5/960ef5a2c44569047223be251bd6c8e6.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+#lunch1 {
+  background-image: url("https://i.pinimg.com/564x/c5/3a/b7/c53ab79f54fb4fedcca9c0f85960bd46.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+#burgers1 {
+  background-image: url("https://i.pinimg.com/564x/a8/a6/3e/a8a63efb6d0f05517badbdcb02fd6ada.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+#drinks1 {
+  background-image: url("https://i.pinimg.com/564x/f1/a7/58/f1a75858899c98bcf01990dbc1f33005.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#topContainer {
+  margin: 0;
+}
+
+#label {
+  font-family: Laila-Bold;
+  padding: 0px 15px 0px 15px;
+  margin-top: 11em;
+  color: #c1e1c1;
+  float: left;
+  font-weight: 900;
+  margin-left: 0.3em;
+}
+#itemSearch {
+  /* position: relative; */
+  margin-right: 0.5em;
+  border: none;
+  background-color: lightgrey;
+  border-radius: 60px;
+  height: 60px;
+  font-size: 2em;
+  padding: 0.5em;
+}
+#itemSearch:hover {
+  background-color: lightgrey;
+}
+#itemSearch:focus {
+  border: none;
+}
+
+#top1 {
+  margin-top: 2em;
+  float: right;
+}
+
+#top1 {
   width: 50%;
   margin-bottom: 3em;
-  }
-  #btnSearch{
-    border-radius: 10px;
-    padding: 0.5em;
-  }
-  #btnSearch,#btnSearch2{
-    font-size: 1em;
-    font-family: Laila-Bold;
-  }
-  #btnSearch2{
-    margin-left: 1em;
-    border-radius: 10px;
-    padding: 0.5em;
-  }
-  #video{
-    color:black;
+}
+#btnSearch {
+  border-radius: 10px;
+  padding: 0.5em;
+}
+#btnSearch,
+#btnSearch2 {
+  font-size: 1em;
+  font-family: Laila-Bold;
+}
+#btnSearch2 {
+  margin-left: 1em;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+#video {
+  color: black;
   font-family: Laila-Bold;
   background-color: antiquewhite;
   margin: 1.5em;
   width: 50%;
   display: inline-flex;
   height: auto;
-  }
-  #video:hover{
-    scale: 1.05;
-  }
-  #videoImg{
-    width: 300px;
-  }
-  #videoInfo{
-   padding-left: 1em;
-   padding-bottom: 1em;
-   padding-right: 1.3em;
-  }
-  #videoTitle{
-    min-height: 2em;
-    margin-top:1.5em ;
+}
+#video:hover {
+  scale: 1.05;
+}
+#videoImg {
+  width: 300px;
+}
+#videoInfo {
+  padding-left: 1em;
+  padding-bottom: 1em;
+  padding-right: 1.3em;
+}
+#videoTitle {
+  min-height: 2em;
+  margin-top: 1.5em;
   font-size: 1.3em;
-  }
-  #videoLength{
-    margin-top: 0.5em;
+}
+#videoLength {
+  margin-top: 0.5em;
   font-size: 1.1em;
-  }
-  #videoViews{
+}
+#videoViews {
   margin-top: 0.5em;
   font-size: 1em;
-  }
-  #videoBtn{
-    border: none;
-    padding: 0.5em;
-    margin-top:0.5em ;
-    width: 8em;
-    font-size: 1em;
-    margin-right :10em; ;
-  }
-  #videoBtn:hover{
-    background-color: #f49d1a;
-  }
-  #videoLink{
-    display: inline-flex;
-  }
-  #fetchedByIngredients{
-    margin-top: 30em;
-      background-color: #FFB6C1;
-      font-size: 1.3em;
-      margin: 1em;
-      padding: 1em;
-      background-color: azure;
-      font-family: Laila-Bold;
-      width:400px;
-  }
-  #fetchedByIngredients:hover{
-    background-color: #E0BFB8
-  }
-  #fetchedByIngredients:active{
-    scale: 0.97;
-  }
-  #mainArea{
-    margin-top: 4em;
-  }
-  #img2{
-    width: 100%;
-  }
+}
+#videoBtn {
+  border: none;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  width: 8em;
+  font-size: 1em;
+  margin-right: 10em;
+}
+#videoBtn:hover {
+  background-color: #f49d1a;
+}
+#videoLink {
+  display: inline-flex;
+}
+#fetchedByIngredients {
+  margin-top: 30em;
+  background-color: #ffb6c1;
+  font-size: 1.3em;
+  margin: 1em;
+  padding: 1em;
+  background-color: azure;
+  font-family: Laila-Bold;
+  width: 400px;
+}
+#fetchedByIngredients:hover {
+  background-color: #e0bfb8;
+}
+#fetchedByIngredients:active {
+  scale: 0.97;
+}
+#mainArea {
+  margin-top: 4em;
+}
+#img2 {
+  width: 100%;
+}
