@@ -311,10 +311,64 @@ function menuTitles(obj, meal) {
         <h6>${element.rating*78}</h6>
         </span>
        </ span>
-      </span>\
+      </span>
         `;
       document.querySelector(".listColumn").appendChild(titles);
   });
   document.getElementById("webname").innerHTML = `${meal}`;
   document.getElementById("webname").style.color = "#FF69B4";
+}
+
+//appending individual recipes
+function appendMealCard(obj) {
+  let detailcard = document.getElementById("mealCard");
+  detailcard.classList.remove("fadeIn2");
+  detailcard.classList.add("mealCard");
+  detailcard.innerHTML = `
+      <div>
+      <img id= 'img'src="${obj.image}" alt="">
+      </div>
+      <div style ='padding-top:3em;padding-bottom:3em;'>
+      <div id="ingredients">
+          <h2>Ingredients</h2>
+      </div>
+      <span style="display:inline-flex">
+      <button id="dir">Directions</button>
+      <button id="fav2"><i class="material-icons" id = "iconfav2">favorite</i></button>
+      <h6 id = "totalLikes">${obj.rating}</h6>
+      </span>
+      <h2 id="facts">Nutritional Facts</h2>
+      <div id="nuitrition">
+          <div class="nut">
+          <h3 id="foodgroup">Calories</h3>
+          <span id="quantity">${obj.Calories}</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Proteins</h3>
+          <span id="quantity">${obj.Protein} g</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Fat</h3>
+          <span id="quantity">${obj.Fat} g</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Carbohydrates</h3>
+          <span id="quantity">${obj.Carbohydrates} g</span>
+        </div>
+      </div>
+      </div>
+  `
+  let ingredients = obj.ingredients;
+  ingredients.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerHTML = item.ingredient;
+    document.getElementById("ingredients").appendChild(li);
+  });
+
+  let likeBtn = document.getElementById("fav2");
+likeBtn.addEventListener("click",() => {
+obj.rating += 1;
+document.getElementById("totalLikes").textContent = obj.rating;
+})
+
 }
