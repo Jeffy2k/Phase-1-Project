@@ -98,7 +98,6 @@ nav ul li a:active {
   top: 0;
 }
 .grid-item:hover {
-  content: "something";
   top: -15px;
 }
 .grid-item:active {
@@ -192,6 +191,9 @@ nav ul li a:active {
 }
 #btnSearch,
 #btnSearch2 {
+  border-radius: 10px;
+  background-color: #f49d1a;
+  border: none;
   margin: 0.3em;
   transform: translate(-52px);
   font-size: 1em;
@@ -272,9 +274,7 @@ nav ul li a:active {
 #fetchedByIngredients:active {
   scale: 0.97;
 }
-#mainArea {
-  margin-top: 4em;
-}
+
 #img2 {
   width: 100%;
 }

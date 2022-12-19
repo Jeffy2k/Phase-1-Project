@@ -538,7 +538,7 @@
   },
   {
     "id": "4",
-        "name": "Crispy Quinoa Burgers Topped with Sweet Potato Fries and Beer Caramelized Onions",
+        "name": "Crispy Quinoa Burgers",
         "price": "580",
         "image": "https://d1yfn1dfres2va.cloudfront.net/006/b7/4f/b74fac76ffdba8d47d4e59cc904d9581_640m.jpg",
         "ingredients":[{"ingredient": "1 cup cannellini beans (mashed)"},{
@@ -605,7 +605,7 @@
   },
   {
     "id": "6",
-        "name": "Balsamic Portobello Burgers with Caramelized Onions & Garlic Aioli",
+        "name": "Balsamic Portobello Burgers",
         "price": "650",
         "image": "https://d1yfn1dfres2va.cloudfront.net/006/cb/e6/cbe6a671ee2f5f82db5b6f78ddf6e037_640m.jpg",
         "ingredients": [{"ingredient": "1 head garlic (to roast)"},{

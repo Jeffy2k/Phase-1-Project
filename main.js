@@ -261,6 +261,7 @@ function getValue(meal) {
 }
 // //Appends Meals Page
 function appendMenu(obj) {
+  document.getElementById("mainArea").style.marginTop = "3.4em"
   let top1 = document.getElementById("top1")
   top1.innerHTML = ''
   let top = document.getElementById("top")
@@ -276,9 +277,9 @@ top.addEventListener("click",()=>{
   dataArea.innerHTML = "";
   dataArea.innerHTML = `
     <div class="row">
-      <div class="listColumn" style="background-color:#aaa;">
+      <div class="listColumn">
       </div>
-      <div class="detailsColumn" style="background-color:#bbb;">
+      <div class="detailsColumn">
           <div id="mealCard">
           </div>
       </div>
@@ -295,10 +296,22 @@ function menuTitles(obj, meal) {
         });
       titles.id = "menuu";
       titles.innerHTML = `
-        <li>${element.name}</li>
-      <span id = "like" style = "display:inline-flex;width:5em">
-       <img src="${element.image}" style = "width:120px;height:120px;margin-top:15px;margin-left:50px"/>
+      <span>
+       <img src="${element.image}" id = "menuPic"/>
       </span>
+      <span style = "position:relative;width:350px">
+      <h3 id = "menuuH3">${element.name}</h3>
+      <span style = "position:absolute;bottom:0">
+        <span class = "menuuIcons">
+        <i id="menuFav" class="material-icons">favorite</i>
+        <h6>${element.rating}</h6>
+        </span>
+        <span class = "menuuIcons">
+        <i id="menuVis" class="material-icons">visibility</i>
+        <h6>${element.rating*78}</h6>
+        </span>
+       </ span>
+      </span>\
         `;
       document.querySelector(".listColumn").appendChild(titles);
   });
