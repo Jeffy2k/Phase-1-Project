@@ -155,10 +155,6 @@ nav ul li a:active {
   height: 100%;
 }
 
-#topContainer {
-  margin: 0;
-}
-
 #label {
   font-family: Laila-Bold;
   padding: 0px 15px 0px 15px;
@@ -169,20 +165,18 @@ nav ul li a:active {
   margin-left: 0.3em;
 }
 #itemSearch {
-  /* position: relative; */
-  margin-right: 0.5em;
-  border: none;
-  background-color: lightgrey;
-  border-radius: 60px;
-  height: 60px;
+  /* margin-top: 1em; */
+  height: 50px;
   font-size: 2em;
   padding: 0.5em;
 }
 #itemSearch:hover {
-  background-color: lightgrey;
+  border: 2px solid orange;
 }
-#itemSearch:focus {
-  border: none;
+#searchIcon {
+  font-size: 3.2em;
+  transform: translate(-50px);
+  color: #f49d1a;
 }
 
 #top1 {
@@ -191,21 +185,28 @@ nav ul li a:active {
 }
 
 #top1 {
-  width: 50%;
   margin-bottom: 3em;
 }
 #btnSearch {
-  border-radius: 10px;
   padding: 0.5em;
 }
 #btnSearch,
 #btnSearch2 {
+  margin: 0.3em;
+  transform: translate(-52px);
   font-size: 1em;
   font-family: Laila-Bold;
 }
+#btnSearch:hover,
+#btnSearch2:hover {
+  background-color: black;
+  color: white;
+}
+#btnSearch:active,
+#btnSearch2:active {
+  scale: 0.97;
+}
 #btnSearch2 {
-  margin-left: 1em;
-  border-radius: 10px;
   padding: 0.5em;
 }
 #video {

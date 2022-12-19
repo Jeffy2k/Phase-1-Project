@@ -205,13 +205,15 @@ function menuPage() {
 </div>
 <div id="topContainer">
  <div id="top1">
-<input type="search" id = "itemSearch">
-</input>
- <button onclick="fetchFoodByIngredients()" id="btnSearch">Search by ingredients</button>
- <button onclick="searchVideos()" id="btnSearch2">Search Video</button>
-</div>
-<div id="top">
-</div>
+ <span style="display: inline-flex">
+  <input type="search" id = "itemSearch"></input>
+  <i id="searchIcon" class="material-icons">search</i>
+  <button onclick="fetchFoodByIngredients()" id="btnSearch">Search by ingredients</button>
+  <button onclick="searchVideos()" id="btnSearch2">Search Video</button>
+ </span>
+ </div>
+ <div id="top">
+ </div>
 </div>
 <div id = "mainArea">
 </div>
