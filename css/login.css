@@ -72,6 +72,7 @@ input[type="number"]:focus {
 }
 
 .container {
+  margin-top: 3em;
   padding-left: 1em;
   padding-right: 1em;
   background-color: #ffbf00;
@@ -111,6 +112,7 @@ input[type="number"]:focus {
 
 /* login form area */
 #info {
+  width: 450px;
   padding-top: 3em;
   text-align: center;
   height: 31.5%;

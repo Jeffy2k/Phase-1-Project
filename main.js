@@ -249,3 +249,59 @@ function menuPage() {
   </div>
 `;
 }
+
+//get value of individual sections.
+function getValue(meal) {
+  fetch(`http://localhost:3000/${meal}`)
+    .then((resp) => resp.json())
+    .then((data) => {
+      appendMenu(data);
+      menuTitles(data, meal);
+    });
+}
+// //Appends Meals Page
+function appendMenu(obj) {
+  let top1 = document.getElementById("top1")
+  top1.innerHTML = ''
+  let top = document.getElementById("top")
+top.innerHTML =`
+<img id="backarrow" src="./images/arrow.png"></img>
+`
+top.addEventListener("click",()=>{
+ let mainArea = document.getElementById("mainArea")
+ mainArea.innerHTML = '';
+ menuPage()
+})
+  let dataArea = document.getElementById("mainArea");
+  dataArea.innerHTML = "";
+  dataArea.innerHTML = `
+    <div class="row">
+      <div class="listColumn" style="background-color:#aaa;">
+      </div>
+      <div class="detailsColumn" style="background-color:#bbb;">
+          <div id="mealCard">
+          </div>
+      </div>
+    </div>`;
+}
+
+//Appends Individual Titles of Meals
+function menuTitles(obj, meal) {
+  obj.forEach((element) => {
+      let titles = document.createElement("div");
+      titles.addEventListener("click", () => {
+        const i = element.id;
+        appendMealCard(obj[i - 1]);
+        });
+      titles.id = "menuu";
+      titles.innerHTML = `
+        <li>${element.name}</li>
+      <span id = "like" style = "display:inline-flex;width:5em">
+       <img src="${element.image}" style = "width:120px;height:120px;margin-top:15px;margin-left:50px"/>
+      </span>
+        `;
+      document.querySelector(".listColumn").appendChild(titles);
+  });
+  document.getElementById("webname").innerHTML = `${meal}`;
+  document.getElementById("webname").style.color = "#FF69B4";
+}
