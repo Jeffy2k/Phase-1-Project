@@ -279,7 +279,46 @@ function menuPage() {
 function fetchByFirstLetter(letter){
 fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
 .then((response)=>response.json())
-.then((data) => console.log(data))
+.then((data) => {
+  appendMenu(data)
+  appendLetterRecipes(data)
+})
+}
+
+//appendes recipes searched by first letter
+function appendLetterRecipes(data){
+// document.getElementById("mainArea").innerHTML = ""
+let obj = data.meals
+obj.forEach((element) => {
+  let titles = document.createElement("div");
+  let z = Math.floor(Math.random() * 5) + 1
+  titles.id = "menuu";
+  titles.innerHTML = `
+    <span>
+     <img src="${element.strMealThumb}" id = "menuPic"/>
+    </span>
+    <span style = "position:relative;width:350px">
+    <h3 id = "menuuH3">${element.strMeal}</h3>
+    <span style = "position:absolute;bottom:0">
+      <span class = "menuuIcons">
+      <i id="menuFav" class="material-icons">grade</i>
+      <h6 class = "likesNum">${z}</h6>
+      </span>
+      <span class = "menuuIcons">
+      <i id="menuVis" class="material-icons">visibility</i>
+      <h6>${z * 78}</h6>
+      </span>
+     </ span>
+    </span>
+      `;
+  // titles.addEventListener("click", () => {
+  //   const i = element.id;
+  //   appendLetterMealCard(obj[i - 1], element.rating);
+  // });
+  document.querySelector(".listColumn").appendChild(titles);
+});
+// let firstObj = obj[0];
+// appendFirstMeal(firstObj);
 }
 
 
@@ -295,7 +334,7 @@ function getValue(meal) {
 }
 // //Appends Meals Page
 function appendMenu(obj) {
-  document.getElementById("mainArea").style.marginTop = "3.4em";
+  document.getElementById("mainArea")
   let top1 = document.getElementById("top1");
   top1.innerHTML = "";
   let top = document.getElementById("top");

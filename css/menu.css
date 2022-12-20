@@ -117,10 +117,10 @@ nav ul li a:active {
 }
 #top {
   padding-left: 2em;
-  padding-top: 2.7em;
-  overflow-x: scroll;
+  /* padding-top: 2.7em; */
+  overflow-y: scroll;
   height: 100px;
-}
+} 
 #top::-webkit-scrollbar {
   display: none;
 }
@@ -186,7 +186,6 @@ nav ul li a:active {
   margin-left: 0.3em;
 }
 #itemSearch {
-  /* margin-top: 1em; */
   height: 50px;
   font-size: 2em;
   padding: 0.5em;
@@ -297,6 +296,7 @@ height: 450px;
   text-overflow: ellipsis;
   font-size: 2.4em;
   margin: 0.13em;
+  margin-top: 1.2em;
 }
 #letters:hover {
   color: #f49d1a;
