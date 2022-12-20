@@ -179,10 +179,8 @@ function menuPage() {
   body.classList.add("menuPage");
   body.innerHTML = `
   <div id="header">
-
   <nav>
     <ul>
-
         <li id="first">
         <a onclick = "returnHome()" href="#">Home</a>
         </li>
@@ -212,6 +210,34 @@ function menuPage() {
  </span>
  </div>
  <div id="top">
+ <span style="display: inline-flex">
+  <div onclick = 'fetchByFirstLetter("a")' id="letters"><h6> A </h6></div>
+  <div onclick = 'fetchByFirstLetter("b")' id="letters"><h6> B </h6></div>
+  <div onclick = 'fetchByFirstLetter("c")' id="letters"><h6> C </h6></div>
+  <div onclick = 'fetchByFirstLetter("d")' id="letters"><h6> D </h6></div>
+  <div onclick = 'fetchByFirstLetter("e")' id="letters"><h6> E </h6></div>
+  <div onclick = 'fetchByFirstLetter("f")' id="letters"><h6> F </h6></div>
+  <div onclick = 'fetchByFirstLetter("g")' id="letters"><h6> G </h6></div>
+  <div onclick = 'fetchByFirstLetter("h")' id="letters"><h6> H </h6></div>
+  <div onclick = 'fetchByFirstLetter("i")' id="letters"><h6> I </h6></div>
+  <div onclick = 'fetchByFirstLetter("j")' id="letters"><h6> J </h6></div>
+  <div onclick = 'fetchByFirstLetter("k")' id="letters"><h6> K </h6></div>
+  <div onclick = 'fetchByFirstLetter("l")' id="letters"><h6> L </h6></div>
+  <div onclick = 'fetchByFirstLetter("m")' id="letters"><h6> M </h6></div>
+  <div onclick = 'fetchByFirstLetter("n")' id="letters"><h6> N </h6></div>
+  <div onclick = 'fetchByFirstLetter("o")' id="letters"><h6> O </h6></div>
+  <div onclick = 'fetchByFirstLetter("p")' id="letters"><h6> P </h6></div>
+  <div onclick = 'fetchByFirstLetter("q")' id="letters"><h6> Q </h6></div>
+  <div onclick = 'fetchByFirstLetter("r")' id="letters"><h6> R </h6></div>
+  <div onclick = 'fetchByFirstLetter("s")' id="letters"><h6> S </h6></div>
+  <div onclick = 'fetchByFirstLetter("t")' id="letters"><h6> T </h6></div>
+  <div onclick = 'fetchByFirstLetter("u")' id="letters"><h6> U </h6></div>
+  <div onclick = 'fetchByFirstLetter("v")' id="letters"><h6> V </h6></div>
+  <div onclick = 'fetchByFirstLetter("w")' id="letters"><h6> W </h6></div>
+  <div onclick = 'fetchByFirstLetter("x")' id="letters"><h6> X </h6></div>
+  <div onclick = 'fetchByFirstLetter("y")' id="letters"><h6> Y </h6></div>
+  <div onclick = 'fetchByFirstLetter("Z")' id="letters"><h6> Z </h6></div>
+ </span>
  </div>
 </div>
 <div id = "mainArea">
@@ -248,6 +274,15 @@ function menuPage() {
   </div>
 `;
 }
+
+//fetches recipes by first letter
+function fetchByFirstLetter(letter){
+fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
+.then((response)=>response.json())
+.then((data) => console.log(data))
+}
+
+
 
 //get value of individual sections.
 function getValue(meal) {
@@ -916,4 +951,112 @@ menuPage()
      main.appendChild(video)
    })
 }
+
+//fetching food by ingredients
+function fetchFoodByIngredients(){
+  let value = document.getElementById("itemSearch").value
+  const apiKey = "a32d9d62bbb9423b8a1343680d766ab4"
+  fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${value}&apiKey=${apiKey}`)
+ .then((res)=>res.json())
+ .then((data)=>{
+   appendMenu()
+   fetchedFood(data)
+    })
+}
+//function append food fetched by ingredients
+function fetchedFood(data){
+// let main = document.getElementById('mainArea');
+// main.innerHTML = '';
+data.forEach((element)=>{
+    let titles = document.createElement("div");
+          titles.addEventListener("click", () => {
+            console.log('clicked')
+            let i = data.indexOf(data.find((item)=>{return item.title === `${element.title}`}));
+            appendFetchedMealCard(data[i]);
+            });
+            let x =  Math.floor(Math.random() * (100 - 90) + 90)
+            let z = Math.floor(Math.random() * 5) + 1
+          titles.id = "fetchedByIngredients";
+          titles.innerHTML = `
+          <span>
+          <img src="${element.image}" id = "menuPic"/>
+         </span>
+         <span style = "position:relative;width:350px">
+         <h3 id = "menuuH3">${element.title}</h3>
+         <span style = "position:absolute;bottom:0">
+           <span class = "menuuIcons">
+           <i id="menuFav" class="material-icons">grade</i>
+           <h6 class = "likesNum">${z}</h6>
+           </span>
+           <span class = "menuuIcons">
+           <i id="menuVis" class="material-icons">visibility</i>
+           <h6>${z*78}</h6>
+           </span>
+          </ span>
+         </span>
+            `;
+            document.querySelector(".listColumn").appendChild(titles);
+})
+}
+//function append individual meal card
+function appendFetchedMealCard(obj) {
+  let z = Math.floor(Math.random() * (250 - 150) + 150)
+  let x = Math.floor(Math.random() * (30 - 10) + 10)
+  let detailcard = document.getElementById("mealCard");
+  detailcard.classList.remove("fadeIn2");
+  detailcard.classList.add("mealCard");
+      detailcard.innerHTML = `
+      <div>
+      <img id= 'img'src="${obj.image}" alt="">
+      </div>
+      <div style ='padding-top:3em;padding-bottom:3em;'>
+      <div id="ingredients">
+          <h2>Ingredients</h2>
+      </div>
+      <span style="display:inline-flex">
+        <button id="fav2"><i class="material-icons" id = "iconfav2">favorite</i></button>
+        <h6 id = "totalLikes">${x}</h6>
+      </span>
+      <h2 id="facts">Nutritional Facts</h2>
+      <div id="nuitrition">
+          <div class="nut">
+          <h3 id="foodgroup">Calories</h3>
+          <span id="quantity">${z}</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Proteins</h3>
+          <span id="quantity">${x} g</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Fat</h3>
+          <span id="quantity">${x}g</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Carbohydrates</h3>
+          <span id="quantity">${x} g</span>
+        </div>
+      </div>
+      </div>
+  `;
+
+  let likeBtn = document.getElementById("fav2");
+  likeBtn.addEventListener("click", () => {
+    x += 1;
+    document.getElementById("totalLikes").textContent = x;
+  });
+
+  let ingredients = obj.missedIngredients;
+  let usedIngredients = obj.usedIngredients;
+  ingredients.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerHTML = item.original;
+    document.getElementById("ingredients").appendChild(li);
+  });
+    usedIngredients.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerHTML = item.original;
+    document.getElementById("ingredients").appendChild(li);
+  });
+}
+
 
