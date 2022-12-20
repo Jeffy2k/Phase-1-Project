@@ -88,13 +88,13 @@ nav ul li a:active {
   color: #ff7000;
 }
 .grid-container {
-  margin-left: 4em;
+  margin-left: 0em;
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
 .grid-item {
-  margin: 2em;
+  margin: 1em;
   content-visibility: 0;
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

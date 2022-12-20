@@ -30,10 +30,7 @@
       background-repeat: no-repeat;
       background-size: cover;
   } */
-/* #mainArea {
-  margin-top: 3.4em;
-} */
-* {
+* { 
   height: auto;
   margin: 0;
   padding: 0;
@@ -44,7 +41,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1625px;
+  width: 1470px;
   height: 790px;
 }
 nav {
@@ -102,11 +99,10 @@ nav ul li a:active {
 
 /*what recipehub offers*/
 #offerCont {
-  width: 60%;
+  width: 970px;
   height: 650px;
-  content: "hi";
   position: relative;
-  margin-left: 20%;
+  margin-left: 18%;
   margin-top: 4em;
   margin-bottom: 4em;
 }
@@ -221,7 +217,7 @@ nav ul li a:active {
 
 /* contact info */
 #mainContact {
-  padding-left: 6em;
+  padding-left: 5em;
   margin-top: 6em;
   background-color: bisque;
   height: auto;
@@ -231,13 +227,13 @@ nav ul li a:active {
   display: inline-block;
   background-color: azure;
   height: 400px;
-  width: 650px;
+  width: 600px;
 }
 #numbers {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   padding-bottom: 2.5em;
-  margin: 2em;
+  margin: 1em;
   height: auto;
 }
 #socialplatforms {
