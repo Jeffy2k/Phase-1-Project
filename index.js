@@ -601,13 +601,13 @@ function appendLetterMealCard(obj){
 
 //get value of individual sections.
 function getValue(meal) {
-  fetch(`http://localhost:3000/${meal}`)
+  fetch("https://jeffy2k.github.io/jeffy2k.project.github.io/server/meals.json")
     .then((resp) => resp.json())
-    .then((data) => {
+    .then((result) => {
+      let data = result[`${meal}`]
       appendMenu(data);
       menuTitles(data, meal);
-      let obj = data.meals
-      appendFirstMeal(obj[0])
+      appendFirstMeal(data[0])
     });
 }
 // //Appends Meals Page
