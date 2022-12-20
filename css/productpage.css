@@ -6,14 +6,19 @@
     font-family: Laila-Bold;
     src: url(./fonts/Laila-Bold.ttf);
   }
-  .detailsColumn,.listColumn{
+  @font-face {
+    font-family: Karla;
+    src: url(./fonts/Karla-VariableFont_wght.ttf);
+  }
+.listColumn{
 background-color :white;
   }
   .detailsColumn {
+    background-color:wheat;
     overflow-y: scroll;
     float: left;
-    width: 67%;
-    padding: 10px;
+    width: 68%;
+   padding: 1.5em;
     height: 840px;
     padding-top: 3em;
   }
@@ -32,6 +37,13 @@ background-color :white;
     display: none;
 }
   .listColumn{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+  }
+  .detailsColumn::-webkit-scrollbar {
+    display: none;
+}
+  .detailsColumn{
     -ms-overflow-style: none; 
     scrollbar-width: none;  
   }
@@ -91,9 +103,9 @@ background-color :white;
   }
  
   #mealCard{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    background-color: #f49d1a;
-    width:100%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+    background-color: white;
+    width: 1045px;
     height: auto;
     margin: auto;
   }
@@ -105,24 +117,31 @@ background-color :white;
     height: 100%;
   }
   #ingredients{
+    font-weight: 450;
+    color: #424242;
+    line-height: 1.9em;
     margin-top: 1em;
     margin-left: 2em;
     font-size: 1.1em;
-    font-family: Laila-Bold;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  }
+  #ingredients h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
   }
 
   #dir{
+    background-color: red;
+    color: white;
     font-family: Laila-Bold;
     width:8em;
     height: 3em;
-    font-size: 1em;
-    border-radius: 8px;
+    font-size: 1.3em;
+    border-radius: 15px;
     margin-left: 2em;
     margin-top: 1em;
     border: none;
-  }
-  #dir:hover{
-    background-color: lightgrey;
   }
   #dir:active{
     scale:0.96;
@@ -135,6 +154,8 @@ background-color :white;
     margin:0 2em 0em 2em;
   }
   #foodgroup{
+    margin-top: 1em;
+    margin-bottom: 1em;
     font-size: 1.3em;
    font-weight: lighter;
   }
@@ -143,6 +164,8 @@ background-color :white;
     font-weight: 900;
   }
   #facts{
+    color: black;
+    font-weight: 900;
     margin-top: 1em;
     margin-left: 1.5em;
     margin-bottom: 0.5em;
@@ -162,7 +185,16 @@ background-color :white;
     }
   }
   #directions{
+    padding-left: 1.4em;
+    line-height: 1.4em;
+    font-size: 1.5em;
+    font-family: Karla;
     margin: 1em;
+  }
+  .dirHead{
+    margin-left: 2em;
+    font-size: 2em;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   }
   #backarrow{
     margin-left: 3em;
@@ -187,27 +219,24 @@ opacity: 1;
   }
  
  #fav2{
-  background-color:#f49d1a ;
+  background-color:#DFF3E3;
   height: auto;
   margin-top: 1.2em;
-  margin-left: 15em;
+  margin-left: 13em;
   border: none;
-  padding: 0.5em;
+  padding: 0.2em;
   border-radius: 10px;
   margin-right: 1em;
  }
- /* #fav2:hover{
-  background-color: black;
- } */
  #fav2:active{
   scale:1.2;
  }
  #iconfav2{
   color: red;
-  font-size:3em;
+  font-size:4em;
  }
  #totalLikes{
-  margin-top: 0.8em;
+  margin-top: 0.9em;
   font-size: 2em;
  }
 .form-control{
@@ -216,9 +245,9 @@ opacity: 1;
   border:solid 1px #818589;
   font-family: 'Courier New', Courier, monospace;
   padding:0.5em;
-font-size: 1em;
-width: 500px;
-height:50px
+  font-size: 1em;
+  width: 500px;
+  height:50px
 }
 .send{
   border-top-right-radius: 10px;
@@ -235,20 +264,28 @@ height:50px
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border:solid 2px #50C878;
-  outline: 0;
-  }
+  border:solid 2px #f49d1a;
+}
 .send:hover{
-  background-color: #00A36C;
+  background-color: #f49d1a;
 }
 .send:active{
   scale: 0.95;
 }
 #commentBox{
+  font-family: Karla;
   margin-top: 4em;
   padding: 1em;
-  background-color: antiquewhite;
-  width: 700px;
+  background-color: white;
+  width: 900px;
+}
+#commentBox h1{
+  margin: 0;
+  margin-bottom: 0.7em;
+  font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;  ;
+  color: black;
+  font-size: 2em;
+  float:left;
 }
 #post{
   color: #495057;
@@ -288,11 +325,12 @@ color: black;
   width: 680px;
   }
 .commentSection{
+  background-color:orange;
   opacity: 1;
   height: 350px;
   width: 650px;
 width:700px;
-background-color: antiquewhite;
+/* background-color: white; */
 }
 #arrowUp{
   margin-left: 8em;
@@ -308,16 +346,28 @@ background-color: antiquewhite;
   margin-right: 0.5em;
 }
 #commentSlot{
-  padding: 0.8em;
-  width: 650px;
+  padding: 1.8em;
+  width: 750px;
   background-color: whitesmoke;
   margin: 1em;
   display: inline-flex;
 }
-#comName{
-  font-family: 'Courier New', Courier, monospace;
+
+.votesCont{
+  display: inline-flex;
+height: 1.3em;
+margin-top: 0.8em;
+}
+.actVote1,.actVote2{
+  color: #181D31;
   margin-right: 1em;
-  font-size: 1.4em;
+  margin-left: 1em;
+  font-size: 1.1em;
+}
+#comName{
+  font-family:Karla;
+  margin-right: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 0.4em;
 }
 #actCom{
