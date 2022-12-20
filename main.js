@@ -289,6 +289,8 @@ function appendMenu(obj) {
 function menuTitles(obj, meal) {
   obj.forEach((element) => {
     let titles = document.createElement("div");
+    let x =( element.rating/20)
+    let z = Math.round(x * 10) / 10
     titles.id = "menuu";
     titles.innerHTML = `
       <span>
@@ -298,8 +300,8 @@ function menuTitles(obj, meal) {
       <h3 id = "menuuH3">${element.name}</h3>
       <span style = "position:absolute;bottom:0">
         <span class = "menuuIcons">
-        <i id="menuFav" class="material-icons">favorite</i>
-        <h6 class = "likesNum">${element.rating}</h6>
+        <i id="menuFav" class="material-icons">grade</i>
+        <h6 class = "likesNum">${z}</h6>
         </span>
         <span class = "menuuIcons">
         <i id="menuVis" class="material-icons">visibility</i>
@@ -350,7 +352,7 @@ function appendFirstMeal(obj) {
         </div>
         <div class="nut">
           <h3 id="foodgroup">Fat</h3>
-          <span id="quantity">${obj.Fat} g</span>
+          <span id="quantity">${obj.Fat}g</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Carbohydrates</h3>
@@ -627,7 +629,7 @@ function appendMealCard(obj) {
         </div>
         <div class="nut">
           <h3 id="foodgroup">Fat</h3>
-          <span id="quantity">${obj.Fat} g</span>
+          <span id="quantity">${obj.Fat}g</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Carbohydrates</h3>
@@ -871,3 +873,47 @@ function appendMealCard(obj) {
     document.getElementById("ingredients").appendChild(li);
   });
 }
+
+//fetching for videos
+function searchVideos(){
+  let value = document.getElementById("itemSearch").value
+  const apiKey = "a32d9d62bbb9423b8a1343680d766ab4"
+  fetch(`https://api.spoonacular.com/food/videos/search?query=${value}&apiKey=${apiKey}`)
+ .then((res)=>res.json())
+ .then((data)=> appendVideos(data.videos))
+
+ }
+
+
+//appending Videos
+function appendVideos(obj){
+let top = document.getElementById("top")
+top.innerHTML =`
+<img id="backarrow" src="./images/arrow.png"></img>
+`
+top.addEventListener("click",()=>{
+let mainArea = document.getElementById("mainArea")
+mainArea.innerHTML = '';
+menuPage()
+})
+ let main = document.getElementById('mainArea');
+ main.innerHTML = '';
+ obj.forEach((item)=>{
+   let viewsInHrs = ((item.length -(item.length%60))/60)
+   let viewsInMins = (item.length%60)
+     let video = document.createElement('div');
+     video.id = "video"
+     video.innerHTML = `
+     <div>
+     <iframe id = "iframe" src="https://www.youtube.com/embed/${item.youTubeId}" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div id = "videoInfo">
+      <h3 id = "videoTitle">${item.title}</h3>
+      <h4 id = "videoLength"><span style = "color:black">${viewsInHrs}</span> hrs <span style = "color:black">${viewsInMins}</span> mins</h4>
+      <h4 id = "videoViews">Views : ${item.views}</h4>
+     </div>
+     `
+     main.appendChild(video)
+   })
+}
+

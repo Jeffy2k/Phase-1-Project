@@ -6,6 +6,18 @@
   font-family: Laila-Bold;
   src: url(./fonts/Laila-Bold.ttf);
 }
+@font-face {
+  font-family: Karla;
+  src: url(./fonts/Karla-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Sacramento;
+  src: url(./fonts/Sacramento-Regular.ttf);
+}
+@font-face {
+  font-family: Comfortaa;
+  src: url(./fonts/Comfortaa-VariableFont_wght.ttf);
+}
 .menuPage {
   background: url("ttps://i.pinimg.com/564x/2f/73/14/2f73140bb52576ae3c451abe7f522865.jpg");
   height: 100%;
@@ -212,51 +224,57 @@ nav ul li a:active {
   padding: 0.5em;
 }
 #video {
-  color: black;
-  font-family: Laila-Bold;
-  background-color: antiquewhite;
-  margin: 1.5em;
-  width: 50%;
-  display: inline-flex;
+  background-color: orange;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  color: black;
+  line-height: 1.9em;
+  margin: 5em 0em 0em 10em;
+  width: 55%;
+  min-height:600px;
   height: auto;
+  /* background-color: white; */
 }
 #video:hover {
-  scale: 1.05;
+  transform: translate(20px);
+  transition: ease-in-out 0.3s;
 }
 #videoImg {
   width: 300px;
 }
 #videoInfo {
+  /* position: relative; */
   padding-left: 1em;
   padding-bottom: 1em;
   padding-right: 1.3em;
 }
 #videoTitle {
-  min-height: 2em;
-  margin-top: 1.5em;
-  font-size: 1.3em;
+  font-family: Comfortaa;
+  color: Black;
+  font-weight: 700;
+  margin-top: 0.7em;
+  font-size: 2em;
 }
 #videoLength {
-  margin-top: 0.5em;
-  font-size: 1.1em;
+  font-family: Karla;
+  color: black;
+  margin-top: 0.8em;
+  font-size: 1.4em;
 }
 #videoViews {
+  font-family: Karla;
   margin-top: 0.5em;
-  font-size: 1em;
+  font-size: 1.5em;
 }
-#videoBtn {
-  border: none;
-  padding: 0.5em;
-  margin-top: 0.5em;
-  width: 8em;
-  font-size: 1em;
-  margin-right: 10em;
-}
+
 #videoBtn:hover {
-  background-color: #f49d1a;
+  background-color: red;
+  color: white;
 }
 #videoLink {
   display: inline-flex;
+}
+#iframe{
+width: 100%;
+height: 450px;
 }
 #fetchedByIngredients {
   margin-top: 30em;
