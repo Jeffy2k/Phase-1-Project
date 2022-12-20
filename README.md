@@ -3,8 +3,9 @@
 ## DESCRIPTION
 Recipehub is a web application for looking up various recipes sourced from different public apis which are :-
 
-<a href = "">
+<a href = "https://www.themealdb.com/api.php">The MealdB</a>
 
+<a href = "https://www.themealdb.com/api.php">spoonacular</a>
 
 INSTALLATION
 To install the repository on your machine follow the instructions below;
