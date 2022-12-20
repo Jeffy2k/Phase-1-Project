@@ -282,12 +282,13 @@ fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
 .then((data) => {
   appendMenu(data)
   appendLetterRecipes(data)
+  let firstObj = data.meals
+  appendLetterMealCard(firstObj[0])
 })
 }
 
 //appendes recipes searched by first letter
 function appendLetterRecipes(data){
-// document.getElementById("mainArea").innerHTML = ""
 let obj = data.meals
 obj.forEach((element) => {
   let titles = document.createElement("div");
@@ -311,16 +312,291 @@ obj.forEach((element) => {
      </ span>
     </span>
       `;
-  // titles.addEventListener("click", () => {
-  //   const i = element.id;
-  //   appendLetterMealCard(obj[i - 1], element.rating);
-  // });
+  titles.addEventListener("click", () => {
+    appendLetterMealCard(element);
+  });
   document.querySelector(".listColumn").appendChild(titles);
 });
 // let firstObj = obj[0];
-// appendFirstMeal(firstObj);
+// appendFirstLetterMealCard(firstObj);
 }
+function appendLetterMealCard(obj){
+  let detailcard = document.getElementById("mealCard");
+  detailcard.classList.remove("fadeIn2");
+  detailcard.classList.add("mealCard");
+  detailcard.innerHTML = `
+      <div>
+        <img id= 'img' src="${obj.strMealThumb}" alt="">
+      </div>
+      <div style ='padding-top:3em;padding-bottom:3em;'>
+      <div id="ingredients">
+          <h2>Ingredients</h2>
+      </div>
+      <span style="display:inline-flex">
+        <button id="dir">Directions</button>
+        <button id="fav2"><i class="material-icons" id = "iconfav2">favorite</i></button>
+        <h6 id = "totalLikes">89</h6>
+      </span>
+      <h2 id="facts">Nutritional Facts</h2>
+      <div id="nuitrition">
+          <div class="nut">
+          <h3 id="foodgroup">Calories</h3>
+          <span id="quantity">89</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Proteins</h3>
+          <span id="quantity">89</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Fat</h3>
+          <span id="quantity">89g</span>
+        </div>
+        <div class="nut">
+          <h3 id="foodgroup">Carbohydrates</h3>
+          <span id="quantity">89g</span>
+        </div>
+      </div>
+      </div>
+  `;
+  let likeBtn = document.getElementById("fav2");
+  likeBtn.addEventListener("click", () => {
+    let x = document.getElementById("totalLikes").textContent
+    x += 1;
+    document.getElementById("totalLikes").textContent = x;
+  });
+  let btn = document.getElementById("dir");
+  btn.addEventListener("click", () => {
+    detailcard.classList.remove("mealCard");
+    detailcard.innerHTML = "";
+    detailcard.innerHTML = `
+    <img id="backarrow2" src="./images/left-arrow.png"></img>
+    <h2 class = "dirHead">DIRECTIONS</h2>
+    <div id = "dirBox">
+    </div>
+    <div id = "commentBox">
+      <h1>Add a comment</h1>
+    <span style = "display: inline-flex">
+      <textarea class="form-control" placeholder="Add a comment or pic..." rows="4"></textarea>
+      <label for="files" class="btn"><i class="material-icons" id = "post">photo_camera</i></label>
+      <button class = "send">Post</button>
+      <input id="files" style="visibility:hidden;" type="file">
+    </span>
+    <div id = "moreComments">
+      <h6>View Comments</h6>
+      <i class="material-icons" id = "arrowDown">keyboard_arrow_down</i>
+    </div>
+    <div id = 'commentSection' class = "commSection">
+     <i class="material-icons" id = "arrowUp">keyboard_arrow_up</i>
+    <div class = "userComment">
+    </div>
+    <div class = "randomComment">
+     <h6  id = "actCom"></h6>
+    </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
+        <img id = "comImg" src = "https://i.pinimg.com/564x/b0/4d/13/b04d13dbb49d01206b2c4825046aa466.jpg"/>
+        <span>
+          <span style = "display:inline-flex"><h5 id = "comName">gerald.</h4><h6 id = "time"><i>1 hr ago</i></h6></span>
+          <h6 id = "actCom">Amazing😍</h6>
+        <span class = "votesCont" ">
+          <img id = "upVote1" src = "./images/up-arrow.png">
+          <h6 id = "voteUp1" class = "actVote1">82</h6>
+          <img id = "downVote1" src = "./images/down-arrow.png">
+          <h6 id = "voteDown1" class = "actVote2">3</h6>
+        </span>
+        </span>
+      </span>
+    </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
+        <img id = "comImg" src = "https://i0.wp.com/trapital.co/wp-content/uploads/2022/06/kendrick-lamar-heart.jpg?w=1200&ssl=1"/>
+         <span>
+          <span style = "display:inline-flex"><h5 id = "comName">Ace</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
+          <h6 id = "actCom">Awesome!</h6>
+        <span class = "votesCont"">
+          <img id = "upVote2" src = "./images/up-arrow.png">
+          <h6 id = "voteUp2" class = "actVote1">76</h6>
+          <img id = "downVote2" src = "./images/down-arrow.png">
+          <h6 id = "voteDown2" class = "actVote2" >1</h6>
+        </span>
+        </span>
+       </span>
+    </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
+        <img id = "comImg" src = "https://i.pinimg.com/564x/50/a8/bd/50a8bdca9971873b79f6f63852212c26.jpg"/>
+        <span>
+          <span style = "display:inline-flex"><h5 id = "comName">glow_wworm2</h4><h6 id = "time"><i>2 months ago</i></h6></span>
+          <h6 id = "actCom">NOOOOOO!!😭😭</h6>
+          <img id = "userPic" src = "https://i.pinimg.com/564x/5e/85/58/5e85581c74a38590db8b35e6d3407bfb.jpg"></img>
+          <br>
+          <span class = "votesCont">
+          <img id = "upVote3" src = "./images/up-arrow.png">
+          <h6 id = "voteUp3" class = "actVote1">101</h6>
+          <img id = "downVote3" src = "./images/down-arrow.png">
+          <h6 id = "voteDown3" class = "actVote2">9</h6>
+          </span>
+        </span>
+        </span>
+   </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
+        <img id = "comImg" src = "https://i.pinimg.com/564x/5f/dc/8d/5fdc8d797aec3c06f0f0be933779b84d.jpg"/>
+        <span>
+        <span style = "display:inline-flex"><h5 id = "comName">the_Return_of_Bruno</h4><h6 id = "time"><i>2 months ago</i></h6></span>
+          <h6 id = "actCom">C'mon😭😭</h6>
+          <img id = "userPic" src = "https://i.pinimg.com/564x/a9/bc/51/a9bc51de59e7f79b39cba8235f8071c6.jpg"></img>
+          <br>
+          <span class = "votesCont">
+            <img id = "upVote4" src = "./images/up-arrow.png">
+            <h6 id = "voteUp4" class = "actVote1">190</h6>
+            <img id = "downVote4" src = "./images/down-arrow.png">
+            <h6 id = "voteDown4" class = "actVote2">17</h6>
+          </span>
+        </span>
+      </span>
+    </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
+        <img id = "comImg" src = "https://i.pinimg.com/564x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg"/>
+       <span>
+        <span style = "display:inline-flex"><h5 id = "comName">the8thsense</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
+        <h6 id = "actCom">The finals was rigged</h6>
+      <span class = "votesCont"">
+        <img id = "upVote5" src = "./images/up-arrow.png">
+        <h6 id = "voteUp5" class = "actVote1">3</h6>
+        <img id = "downVote5" src = "./images/down-arrow.png">
+        <h6 id = "voteDown5" class = "actVote2">320</h6>
+      </span>
+      </span>
+     </span>
+  </div>
+  </div>
+  </div>
+    `;
+    document.getElementById("upVote1").addEventListener("click",()=>{
+     let upVotes =  parseInt(document.getElementById("voteUp1").textContent);
+     upVotes += 1;
+     document.getElementById("voteUp1").textContent = upVotes
+    })
+    document.getElementById("downVote1").addEventListener("click",()=>{
+      let downVotes =  parseInt(document.getElementById("voteDown1").textContent)
+      downVotes += 1;
+      document.getElementById("voteDown1").textContent = downVotes
+     })
+     document.getElementById("upVote2").addEventListener("click",()=>{
+      let upVotes =  parseInt(document.getElementById("voteUp2").textContent);
+      upVotes += 1;
+      document.getElementById("voteUp2").textContent = upVotes
+     })
+     document.getElementById("downVote2").addEventListener("click",()=>{
+       let downVotes =  parseInt(document.getElementById("voteDown2").textContent)
+       downVotes += 1;
+       document.getElementById("voteDown2").textContent = downVotes
+      })
+    document.getElementById("upVote3").addEventListener("click",()=>{
+    let upVotes =  parseInt(document.getElementById("voteUp3").textContent);
+    upVotes += 1;
+    document.getElementById("voteUp3").textContent = upVotes
+    })
+    document.getElementById("downVote3").addEventListener("click",()=>{
+      let downVotes =  parseInt(document.getElementById("voteDown3").textContent)
+      downVotes += 1;
+      document.getElementById("voteDown3").textContent = downVotes
+    })
+    document.getElementById("upVote4").addEventListener("click",()=>{
+      let upVotes =  parseInt(document.getElementById("voteUp4").textContent);
+      upVotes += 1;
+      document.getElementById("voteUp4").textContent = upVotes
+      })
+      document.getElementById("downVote1").addEventListener("click",()=>{
+        let downVotes = parseInt(document.getElementById("voteDown4").textContent)
+        downVotes += 1;
+        document.getElementById("voteDown4").textContent = downVotes
+      })
+      document.getElementById("upVote5").addEventListener("click",()=>{
+        let upVotes =  parseInt(document.getElementById("voteUp5").textContent);
+        upVotes += 1;
+        document.getElementById("voteUp5").textContent = upVotes
+        })
+        document.getElementById("downVote5").addEventListener("click",()=>{
+          let downVotes = parseInt(document.getElementById("voteDown5").textContent)
+          downVotes += 1;
+          document.getElementById("voteDown5").textContent = downVotes
+        })
+        document.querySelector(".send").addEventListener("click", () => {
+          let userComment = document.querySelector(".userComment");
+          let value = document.querySelector(".form-control").value;
+          let value2 = document.querySelector("#files").value;
+          if(value !== "" || value2 !== "") {
+          userComment.innerHTML = `
+         <div class="randomComment">
+          <span id="commentSlot">
+            <img id = "comImg" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>
+            <span>
+              <span style = "display:inline-flex"><h5 id = "comName">You</h4><h6 id = "time"><i>just now</i></h6></span>
+              <h6 id = "actCom">${value}</h6>
+              <img id = "userPic" src = "${value2}"></img>
+            <span class = "votesCont" ">
+              <img id = "upVote6" src = "./images/up-arrow.png">
+              <h6 id = "voteUp6" class = "actVote1">0</h6>
+              <img id = "downVote6" src = "./images/down-arrow.png">
+              <h6 id = "voteDown6" class = "actVote2">0</h6>
+            </span>
+            </span>
+          </span>
+         </span>
+         </div>
+          `;
+          document.getElementById("upVote6").addEventListener("click",()=>{
+          let upVotes = parseInt(document.getElementById("voteUp6").textContent);
+          upVotes += 1;
+          document.getElementById("voteUp6").textContent = upVotes
+          })
+          document.getElementById("downVote6").addEventListener("click",()=>{
+          let downVotes = parseInt(document.getElementById("voteDown6").textContent)
+          downVotes += 1;
+          document.getElementById("voteDown6").textContent = downVotes
+            })
+          }
+          else if (value === "" && value2 === ""){
+            console.log("error")
+          }
+        });
 
+    document.getElementById("moreComments").addEventListener("click", () => {
+      document.getElementById("commentSection").classList.remove("commSection");
+      // document.getElementById('commentSection').classList.add('commentSection');
+    });
+    document.getElementById("arrowUp").addEventListener("click", () => {
+      document.getElementById("commentSection").classList.add("commSection");
+    });
+    document.getElementById("backarrow2").addEventListener("click", () => {
+      detailcard.innerHTML = "";
+      appendLetterMealCard(obj);
+    });
+    detailcard.classList.add("fadeIn2");
+      let directions = document.createElement("p");
+      directions.id = "directions";
+      directions.innerHTML = obj.strInstructions;
+      document.getElementById("dirBox").appendChild(directions);
+  });
+    let ingDiv = document.createElement("div");
+    ingDiv.id = "ingDiv"
+    ingDiv.innerHTML =`
+    <h6>${obj.strMeasure1} ${obj.strIngredient1}</h6>
+    <h6>${obj.strMeasure2} ${obj.strIngredient2}</h6>
+    <h6>${obj.strMeasure3} ${obj.strIngredient3}</h6>
+    <h6>${obj.strMeasure4} ${obj.strIngredient4}</h6>
+    <h6>${obj.strMeasure5} ${obj.strIngredient5}</h6>
+    <h6>${obj.strMeasure6} ${obj.strIngredient6}</h6>
+    <h6>${obj.strMeasure7} ${obj.strIngredient7}</h6>
+    <h6>${obj.strMeasure8} ${obj.strIngredient8}</h6>
+    <h6>${obj.strMeasure9} ${obj.strIngredient9}</h6>
+    <h6>${obj.strMeasure10} ${obj.strIngredient10}</h6>
+    `
+    document.getElementById("ingredients").appendChild(ingDiv);
+}
 
 
 //get value of individual sections.
@@ -330,6 +606,8 @@ function getValue(meal) {
     .then((data) => {
       appendMenu(data);
       menuTitles(data, meal);
+      let obj = data.meals
+      appendFirstMeal(obj[0])
     });
 }
 // //Appends Meals Page
@@ -393,284 +671,7 @@ function menuTitles(obj, meal) {
   document.getElementById("webname").innerHTML = `${meal}`;
   document.getElementById("webname").style.color = "#FF69B4";
   let firstObj = obj[0];
-  appendFirstMeal(firstObj);
-}
-
-//appends first meal.
-function appendFirstMeal(obj) {
-  let detailcard = document.getElementById("mealCard");
-  detailcard.classList.remove("fadeIn2");
-  detailcard.classList.add("mealCard");
-  detailcard.innerHTML = `
-      <div>
-      <img id= 'img'src="${obj.image}" alt="">
-      </div>
-      <div style ='padding-top:3em;padding-bottom:3em;'>
-      <div id="ingredients">
-          <h2>Ingredients</h2>
-      </div>
-      <span style="display:inline-flex">
-      <button id="dir">Directions</button>
-      <button id="fav2"><i class="material-icons" id = "iconfav2">favorite</i></button>
-      <h6 id = "totalLikes">${obj.rating}</h6>
-      </span>
-      <h2 id="facts">Nutritional Facts</h2>
-      <div id="nuitrition">
-          <div class="nut">
-          <h3 id="foodgroup">Calories</h3>
-          <span id="quantity">${obj.Calories}</span>
-        </div>
-        <div class="nut">
-          <h3 id="foodgroup">Proteins</h3>
-          <span id="quantity">${obj.Protein} g</span>
-        </div>
-        <div class="nut">
-          <h3 id="foodgroup">Fat</h3>
-          <span id="quantity">${obj.Fat}g</span>
-        </div>
-        <div class="nut">
-          <h3 id="foodgroup">Carbohydrates</h3>
-          <span id="quantity">${obj.Carbohydrates} g</span>
-        </div>
-      </div>
-      </div>
-  `;
-  let ingredients = obj.ingredients;
-  ingredients.forEach((item) => {
-    let li = document.createElement("li");
-    li.innerHTML = item.ingredient;
-    document.getElementById("ingredients").appendChild(li);
-  });
-
-  let likeBtn = document.getElementById("fav2");
-  likeBtn.addEventListener("click", () => {
-    obj.rating += 1;
-    document.getElementById("totalLikes").textContent = obj.rating;
-    document.getElementsByClassName("likesNum").textContent = obj.rating;
-  });
-  let btn = document.getElementById("dir");
-  btn.addEventListener("click", () => {
-    detailcard.classList.remove("mealCard");
-    detailcard.innerHTML = "";
-    detailcard.innerHTML = `
-    <img id="backarrow2" src="./images/left-arrow.png"></img>
-    <h2 class = "dirHead">DIRECTIONS</h2>
-    <div>
-    <ol id = "dirBox">
-    </ol>
-    </div>
-    <div id = "commentBox">
-      <h1>Add a comment</h1>
-    <span style = "display: inline-flex">
-      <textarea class="form-control" placeholder="Add a comment or pic..." rows="4"></textarea>
-      <label for="files" class="btn"><i class="material-icons" id = "post">photo_camera</i></label>
-      <button class = "send">Post</button>
-      <input id="files" style="visibility:hidden;" type="file">
-    </span>
-    <div id = "moreComments">
-      <h6>View Comments</h6>
-      <i class="material-icons" id = "arrowDown">keyboard_arrow_down</i>
-    </div>
-    <div id = 'commentSection' class = "commSection">
-     <i class="material-icons" id = "arrowUp">keyboard_arrow_up</i>
-    <div class = "userComment">
-    </div>
-    <div class = "randomComment">
-     <h6  id = "actCom"></h6>
-    </div>
-    <div class = "randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://i.pinimg.com/564x/b0/4d/13/b04d13dbb49d01206b2c4825046aa466.jpg"/>
-        <span>
-          <span style = "display:inline-flex"><h5 id = "comName">gerald.</h4><h6 id = "time"><i>1 hr ago</i></h6></span>
-          <h6 id = "actCom">Amazing😍</h6>
-        <span class = "votesCont" ">
-          <img id = "upVote1" src = "./images/up-arrow.png">
-          <h6 id = "voteUp1" class = "actVote1">82</h6>
-          <img id = "downVote1" src = "./images/down-arrow.png">
-          <h6 id = "voteDown1" class = "actVote2">3</h6>
-        </span>
-        </span>
-      </span>
-    </div>
-    <div class = "randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://i0.wp.com/trapital.co/wp-content/uploads/2022/06/kendrick-lamar-heart.jpg?w=1200&ssl=1"/>
-         <span>
-          <span style = "display:inline-flex"><h5 id = "comName">Ace</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
-          <h6 id = "actCom">Awesome!</h6>
-        <span class = "votesCont"">
-          <img id = "upVote2" src = "./images/up-arrow.png">
-          <h6 id = "voteUp2" class = "actVote1">76</h6>
-          <img id = "downVote2" src = "./images/down-arrow.png">
-          <h6 id = "voteDown2" class = "actVote2" >1</h6>
-        </span>
-        </span>
-       </span>
-    </div>
-    <div class = "randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://i.pinimg.com/564x/50/a8/bd/50a8bdca9971873b79f6f63852212c26.jpg"/>
-        <span>
-          <span style = "display:inline-flex"><h5 id = "comName">glow_wworm2</h4><h6 id = "time"><i>yesterday</i></h6></span>
-          <h6 id = "actCom">NOOOOOO!!😭😭</h6>
-          <img id = "userPic" src = "https://i.pinimg.com/564x/5e/85/58/5e85581c74a38590db8b35e6d3407bfb.jpg"></img>
-          <br>
-          <span class = "votesCont">
-          <img id = "upVote3" src = "./images/up-arrow.png">
-          <h6 id = "voteUp3" class = "actVote1">101</h6>
-          <img id = "downVote3" src = "./images/down-arrow.png">
-          <h6 id = "voteDown3" class = "actVote2">9</h6>
-          </span>
-        </span>
-        </span>
-   </div>
-    <div class = "randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://i.pinimg.com/564x/5f/dc/8d/5fdc8d797aec3c06f0f0be933779b84d.jpg"/>
-        <span>
-        <span style = "display:inline-flex"><h5 id = "comName">the_Return_of_Bruno</h4><h6 id = "time"><i>2 days ago</i></h6></span>
-          <h6 id = "actCom">C'mon😭😭</h6>
-          <img id = "userPic" src = "https://i.pinimg.com/564x/a9/bc/51/a9bc51de59e7f79b39cba8235f8071c6.jpg"></img>
-          <br>
-          <span class = "votesCont">
-            <img id = "upVote4" src = "./images/up-arrow.png">
-            <h6 id = "voteUp4" class = "actVote1">190</h6>
-            <img id = "downVote4" src = "./images/down-arrow.png">
-            <h6 id = "voteDown4" class = "actVote2">17</h6>
-          </span>
-        </span>
-      </span>
-    </div>
-    <div class = "randomComment">
-    <span id="commentSlot">
-      <img id = "comImg" src = "https://i.pinimg.com/564x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg"/>
-      <span>
-        <span style = "display:inline-flex"><h5 id = "comName">the8thsense.</h4><h6 id = "time"><i>2 days ago</i></h6></span>
-        <h6 id = "actCom">The finals was rigged...</h6>
-      <span class = "votesCont" ">
-        <img id = "upVote5" src = "./images/up-arrow.png">
-        <h6 id = "voteUp5" class = "actVote1">8</h6>
-        <img id = "downVote5" src = "./images/down-arrow.png">
-        <h6 id = "voteDown5" class = "actVote2">310</h6>
-      </span>
-      </span>
-    </span>
-  </div>
-  </div>
-  </div>
-    `;
-    document.getElementById("upVote1").addEventListener("click",()=>{
-     let upVotes =  parseInt(document.getElementById("voteUp1").textContent);
-     upVotes += 1;
-     document.getElementById("voteUp1").textContent = upVotes
-    })
-    document.getElementById("downVote1").addEventListener("click",()=>{
-      let downVotes =  parseInt(document.getElementById("voteDown1").textContent)
-      downVotes += 1;
-      document.getElementById("voteDown1").textContent = downVotes
-     })
-     document.getElementById("upVote2").addEventListener("click",()=>{
-      let upVotes =  parseInt(document.getElementById("voteUp2").textContent);
-      upVotes += 1;
-      document.getElementById("voteUp2").textContent = upVotes
-     })
-     document.getElementById("downVote2").addEventListener("click",()=>{
-       let downVotes =  parseInt(document.getElementById("voteDown2").textContent)
-       downVotes += 1;
-       document.getElementById("voteDown2").textContent = downVotes
-      })
-    document.getElementById("upVote3").addEventListener("click",()=>{
-    let upVotes =  parseInt(document.getElementById("voteUp3").textContent);
-    upVotes += 1;
-    document.getElementById("voteUp3").textContent = upVotes
-    })
-    document.getElementById("downVote3").addEventListener("click",()=>{
-      let downVotes =  parseInt(document.getElementById("voteDown3").textContent)
-      downVotes += 1;
-      document.getElementById("voteDown3").textContent = downVotes
-    })
-    document.getElementById("upVote4").addEventListener("click",()=>{
-      let upVotes =  parseInt(document.getElementById("voteUp4").textContent);
-      upVotes += 1;
-      document.getElementById("voteUp4").textContent = upVotes
-      })
-      document.getElementById("downVote1").addEventListener("click",()=>{
-        let downVotes = parseInt(document.getElementById("voteDown4").textContent)
-        downVotes += 1;
-        document.getElementById("voteDown4").textContent = downVotes
-      })
-      document.getElementById("upVote5").addEventListener("click",()=>{
-        let upVotes = parseInt(document.getElementById("voteUp5").textContent);
-        upVotes += 1;
-        document.getElementById("voteUp5").textContent = upVotes
-        })
-        document.getElementById("downVote5").addEventListener("click",()=>{
-          let downVotes = parseInt(document.getElementById("voteDown5").textContent)
-          downVotes += 1;
-          document.getElementById("voteDown5").textContent = downVotes
-        })
-    document.querySelector(".send").addEventListener("click", () => {
-      let userComment = document.querySelector(".userComment");
-      let value = document.querySelector(".form-control").value;
-      let value2 = document.querySelector("#files").value;
-      if(value !== "" || value2 !== "") {
-      userComment.innerHTML = `
-     <div class="randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>
-        <span>
-          <span style = "display:inline-flex"><h5 id = "comName">You</h4><h6 id = "time"><i>just now</i></h6></span>
-          <h6 id = "actCom">${value}</h6>
-          <img id = "userPic" src = "${value2}"></img>
-        <span class = "votesCont" ">
-          <img id = "upVote6" src = "./images/up-arrow.png">
-          <h6 id = "voteUp6" class = "actVote1">0</h6>
-          <img id = "downVote6" src = "./images/down-arrow.png">
-          <h6 id = "voteDown6" class = "actVote2">0</h6>
-        </span>
-        </span>
-      </span>
-     </span>
-     </div>
-      `;
-      document.getElementById("upVote6").addEventListener("click",()=>{
-      let upVotes = parseInt(document.getElementById("voteUp6").textContent);
-      upVotes += 1;
-      document.getElementById("voteUp6").textContent = upVotes
-      })
-      document.getElementById("downVote6").addEventListener("click",()=>{
-      let downVotes = parseInt(document.getElementById("voteDown6").textContent)
-      downVotes += 1;
-      document.getElementById("voteDown6").textContent = downVotes
-        })
-      }
-      else if (value === "" && value2 === ""){
-        console.log("error")
-      }
-    });
-
-    document.getElementById("moreComments").addEventListener("click", () => {
-      document.getElementById("commentSection").classList.remove("commSection");
-      // document.getElementById('commentSection').classList.add('commentSection');
-    });
-    document.getElementById("arrowUp").addEventListener("click", () => {
-      document.getElementById("commentSection").classList.add("commSection");
-    });
-    document.getElementById("backarrow2").addEventListener("click", () => {
-      detailcard.innerHTML = "";
-      appendMealCard(obj);
-    });
-    detailcard.classList.add("fadeIn2");
-    let directions = obj.directions;
-
-    directions.forEach((item) => {
-      let li = document.createElement("li");
-      li.id = "directions";
-      li.innerHTML = item.direction;
-      document.getElementById("dirBox").appendChild(li);
-    });
-  });
+  appendMealCard(firstObj);
 }
 
 //appending individual recipes
@@ -1000,12 +1001,11 @@ function fetchFoodByIngredients(){
  .then((data)=>{
    appendMenu()
    fetchedFood(data)
+   appendFetchedMealCard([0])
     })
 }
 //function append food fetched by ingredients
 function fetchedFood(data){
-// let main = document.getElementById('mainArea');
-// main.innerHTML = '';
 data.forEach((element)=>{
     let titles = document.createElement("div");
           titles.addEventListener("click", () => {
@@ -1080,8 +1080,9 @@ function appendFetchedMealCard(obj) {
 
   let likeBtn = document.getElementById("fav2");
   likeBtn.addEventListener("click", () => {
-    x += 1;
-    document.getElementById("totalLikes").textContent = x;
+   let value = parseInt(document.getElementById("totalLikes").textContent);
+   value += 1;
+    document.getElementById("totalLikes").textContent = value;
   });
 
   let ingredients = obj.missedIngredients;
