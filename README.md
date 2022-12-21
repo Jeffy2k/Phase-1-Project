@@ -25,7 +25,7 @@ This website was built with the following technologies:
 You can access recipehub using the following steps below:-
 - Using the live link below;
 
-   <a href = "https://jeffy2k.github.io/Phase-1-Project/" target = "-blank">RecipeHub.com</a>
+   <a href = "https://jeffy2k.github.io/Phase-1-Project/" target = "_blank">RecipeHub.com</a>
 
 - Installing the repo on your machine   
 
