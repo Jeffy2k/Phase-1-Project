@@ -1001,7 +1001,7 @@ function fetchFoodByIngredients(){
  .then((data)=>{
    appendMenu()
    fetchedFood(data)
-   appendFetchedMealCard([0])
+   appendFetchedMealCard(data[0])
     })
 }
 //function append food fetched by ingredients

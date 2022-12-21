@@ -18,6 +18,13 @@
   font-family: Comfortaa;
   src: url(./fonts/Comfortaa-VariableFont_wght.ttf);
 }
+*::-webkit-scrollbar {
+  display: none;
+}
+*{
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
 .menuPage {
   background: url("ttps://i.pinimg.com/564x/2f/73/14/2f73140bb52576ae3c451abe7f522865.jpg");
   height: 100%;
@@ -30,6 +37,7 @@
 }
 
 * {
+
   height: auto;
   margin: 0;
   padding: 0;
@@ -40,7 +48,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1625px;
+  width: 1460px;
   height: 650px;
 }
 nav {
@@ -88,7 +96,7 @@ nav ul li a:active {
   color: #ff7000;
 }
 .grid-container {
-  margin-left: 0em;
+  margin-left: 3em;
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
@@ -275,10 +283,10 @@ height: 450px;
 #fetchedByIngredients {
   margin-right: 0.5em;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
-  width: 430px;
+  width: 380px;
   display: inline-flex;
   margin: 1em;
-  height: 220px;
+  height: 180px;
   background-color: #FEF1E6;
 }
 #fetchedByIngredients:hover {

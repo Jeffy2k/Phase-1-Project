@@ -17,9 +17,9 @@ background-color :white;
     background-color:wheat;
     overflow-y: scroll;
     float: left;
-    width: 1100px;
+    width: 1010px;
    padding: 1.5em;
-    height: 840px;
+    height: 810px;
     padding-top: 3em;
   }
   .listColumn {
@@ -30,7 +30,7 @@ background-color :white;
     width: 30%;
     padding: 10px;
     overflow-y: scroll;
-    height: 840px;
+    height: 810px;
   }
   .listColumn::-webkit-scrollbar {
     display: none;
@@ -59,7 +59,7 @@ background-color :white;
   #menuu{
     margin-right: 0.5em;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
-    width: 430px;
+    width: 380px;
     display: inline-flex;
     margin: 1em;
     height: 180px;
@@ -109,11 +109,13 @@ background-color :white;
     padding-right: 2.5em;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
     background-color: white;
-    width: auto;
+    width: 950px;
     height: auto;
     margin: auto;
   }
  .mealCard{
+  width: auto;
+  padding-right: 2.5em;
   display: inline-flex;
   }
   #img{
@@ -156,10 +158,10 @@ background-color :white;
   }
   .nut{
     text-align: center;
-    margin:0 1em 0em 1.3em;
+    margin:0 1em 0em 1em;
   }
   #foodgroup{
-    margin-top: 1em;
+    /* margin-top: 1em; */
     margin-bottom: 1em;
     font-size: 1.3em;
    font-weight: lighter;
@@ -172,7 +174,7 @@ background-color :white;
     color: black;
     font-weight: 900;
     margin-top: 1em;
-    margin-left: 1.5em;
+    margin-left: 0.6em;
     margin-bottom: 0.5em;
   }
   .fadeIn2 {
@@ -225,7 +227,7 @@ opacity: 1;
   background-color:white;
   height: auto;
   margin-top: 1.2em;
-  margin-left: 10em;
+  margin-left: 9em;
   border: none;
   padding: 0.2em;
   border-radius: 10px;
