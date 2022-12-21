@@ -395,3 +395,10 @@ font-size: 1.5em;
 #userPic{
   width: 500px;
 }
+#cancel{
+  font-size: 2em;
+  margin-left:15em ;
+}
+#cancel:hover{
+  color: red;
+}

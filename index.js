@@ -148,9 +148,6 @@ function homePage() {
   </div>
   </div>
   `;
-  // document.getElementsByClassName('return').addEventListener('click',()=>{
-  //   console.log('clicked');
-  // })
   document.getElementById("rightBtn").addEventListener("click", () => {
     console.log("clicked");
     document.getElementById("offerCont").classList.remove("offerContent");
@@ -292,7 +289,9 @@ function appendLetterRecipes(data){
 let obj = data.meals
 obj.forEach((element) => {
   let titles = document.createElement("div");
-  let z = Math.floor(Math.random() * 5) + 1
+  let x =  Math.floor(Math.random() * (100 - 70) + 70)
+  let b = (x/20)
+  let z = Math.round(b* 10) / 10
   titles.id = "menuu";
   titles.innerHTML = `
     <span>
@@ -307,7 +306,7 @@ obj.forEach((element) => {
       </span>
       <span class = "menuuIcons">
       <i id="menuVis" class="material-icons">visibility</i>
-      <h6>${z * 78}</h6>
+      <h6>${x * 78}</h6>
       </span>
      </ span>
     </span>
@@ -318,8 +317,15 @@ obj.forEach((element) => {
   document.querySelector(".listColumn").appendChild(titles);
 });
 }
+
+//append the meal cards for the recipes fetched by the first letter
 function appendLetterMealCard(obj){
   let detailcard = document.getElementById("mealCard");
+  let x =  Math.floor(Math.random() * (100 - 90) + 90)
+  let z = Math.floor(Math.random() * (250 - 150) + 150)
+  let c = Math.floor(Math.random() * (30 - 10) + 10)
+  let a = Math.floor(Math.random() * (25 - 15) + 15)
+  let b = Math.floor(Math.random() * (40 - 30) + 30)
   detailcard.classList.remove("fadeIn2");
   detailcard.classList.add("mealCard");
   detailcard.innerHTML = `
@@ -333,25 +339,25 @@ function appendLetterMealCard(obj){
       <span style="display:inline-flex">
         <button id="dir">Directions</button>
         <button id="fav2"><i class="material-icons" id = "iconfav2">favorite</i></button>
-        <h6 id = "totalLikes">89</h6>
+        <h6 id = "totalLikes">${x}</h6>
       </span>
       <h2 id="facts">Nutritional Facts</h2>
       <div id="nuitrition">
           <div class="nut">
           <h3 id="foodgroup">Calories</h3>
-          <span id="quantity">89</span>
+          <span id="quantity">${z}</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Proteins</h3>
-          <span id="quantity">89</span>
+          <span id="quantity">${c}g</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Fat</h3>
-          <span id="quantity">89g</span>
+          <span id="quantity">${a}g</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Carbohydrates</h3>
-          <span id="quantity">89g</span>
+          <span id="quantity">${b}g</span>
         </div>
       </div>
       </div>
@@ -359,8 +365,8 @@ function appendLetterMealCard(obj){
   let likeBtn = document.getElementById("fav2");
   likeBtn.addEventListener("click", () => {
     let x = document.getElementById("totalLikes").textContent
-    x += 1;
-    document.getElementById("totalLikes").textContent = x;
+    let y = (+x + 1);
+    document.getElementById("totalLikes").textContent = y;
   });
   let btn = document.getElementById("dir");
   btn.addEventListener("click", () => {
@@ -548,6 +554,10 @@ function appendLetterMealCard(obj){
          </span>
          </div>
           `;
+          document.getElementById('cancel').addEventListener('click', () => {
+            let userComment = document.querySelector(".userComment");
+            userComment.innerHTML = ''
+          });
           document.getElementById("upVote6").addEventListener("click",()=>{
           let upVotes = parseInt(document.getElementById("voteUp6").textContent);
           upVotes += 1;
@@ -566,7 +576,6 @@ function appendLetterMealCard(obj){
 
     document.getElementById("moreComments").addEventListener("click", () => {
       document.getElementById("commentSection").classList.remove("commSection");
-      // document.getElementById('commentSection').classList.add('commentSection');
     });
     document.getElementById("arrowUp").addEventListener("click", () => {
       document.getElementById("commentSection").classList.add("commSection");
@@ -890,7 +899,9 @@ function appendMealCard(obj) {
           <span id="commentSlot">
             <img id = "comImg" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>
             <span>
-              <span style = "display:inline-flex"><h5 id = "comName">You</h4><h6 id = "time"><i>just now</i></h6></span>
+              <span style = "display:inline-flex"><h5 id = "comName">You</h4><h6 id = "time"><i>just now</i></h6>
+              <i class="material-icons" id = "cancel">close</i>
+              </span>
               <h6 id = "actCom">${value}</h6>
               <img id = "userPic" src = "${value2}"></img>
             <span class = "votesCont" ">
@@ -904,6 +915,10 @@ function appendMealCard(obj) {
          </span>
          </div>
           `;
+          document.getElementById('cancel').addEventListener('click', () => {
+            let userComment = document.querySelector(".userComment");
+            userComment.innerHTML = ''
+          });
           document.getElementById("upVote6").addEventListener("click",()=>{
           let upVotes = parseInt(document.getElementById("voteUp6").textContent);
           upVotes += 1;
@@ -1013,8 +1028,9 @@ data.forEach((element)=>{
             let i = data.indexOf(data.find((item)=>{return item.title === `${element.title}`}));
             appendFetchedMealCard(data[i]);
             });
-            let x =  Math.floor(Math.random() * (100 - 90) + 90)
-            let z = Math.floor(Math.random() * 5) + 1
+            let x =  Math.floor(Math.random() * (100 - 70) + 70)
+            let b = (x/20)
+            let z = Math.round(b* 10) / 10
           titles.id = "fetchedByIngredients";
           titles.innerHTML = `
           <span>
@@ -1029,7 +1045,7 @@ data.forEach((element)=>{
            </span>
            <span class = "menuuIcons">
            <i id="menuVis" class="material-icons">visibility</i>
-           <h6>${z*78}</h6>
+           <h6>${x*78}</h6>
            </span>
           </ span>
          </span>
@@ -1040,7 +1056,10 @@ data.forEach((element)=>{
 //function append individual meal card
 function appendFetchedMealCard(obj) {
   let z = Math.floor(Math.random() * (250 - 150) + 150)
-  let x = Math.floor(Math.random() * (30 - 10) + 10)
+  let x = Math.floor(Math.random() * (150 - 100) + 100)
+  let c = Math.floor(Math.random() * (45 - 15) + 15)
+  let a = Math.floor(Math.random() * (25 - 15) + 15)
+  let b = Math.floor(Math.random() * (40 - 30) + 30)
   let detailcard = document.getElementById("mealCard");
   detailcard.classList.remove("fadeIn2");
   detailcard.classList.add("mealCard");
@@ -1064,15 +1083,15 @@ function appendFetchedMealCard(obj) {
         </div>
         <div class="nut">
           <h3 id="foodgroup">Proteins</h3>
-          <span id="quantity">${x} g</span>
+          <span id="quantity">${a} g</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Fat</h3>
-          <span id="quantity">${x}g</span>
+          <span id="quantity">${b}g</span>
         </div>
         <div class="nut">
           <h3 id="foodgroup">Carbohydrates</h3>
-          <span id="quantity">${x} g</span>
+          <span id="quantity">${c} g</span>
         </div>
       </div>
       </div>
