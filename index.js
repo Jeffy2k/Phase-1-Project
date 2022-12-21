@@ -118,7 +118,7 @@ function homePage() {
   <div id = "aboutBox">
     <div id = "about">
       <h1 id = "aboutTitle">About Us</h1>
-      <p id = "aboutDetails">Recipehub is a trusted resource for home cooks that offers a large variety of recipes spread across different mealtypes.Recipehub provides information on the ingredients and well outlined step by step instructions on how to prepare different meals.Over the years since recipehub was started by Rick Sanchez as home cooking blog it has drawn thousands of food enthusiasts across the globe.</p>
+      <p id = "aboutDetails">Recipehub is a trusted resource for home cooks that offers a large variety of recipes spread across different mealtypes.Recipehub provides information on the ingredients and well outlined step by step instructions on how to prepare different meals.Over the years, since recipehub was started by Jeff Maina as, home cooking blog, it has drawn thousands of food enthusiasts from across the globe.</p>
     </div>
     <div id = "aboutPic">
     </div>
@@ -128,7 +128,7 @@ function homePage() {
       <div class = "contactChild" id = "numbers">
         <i id="call" class="material-icons">call</i>
         <h2 class = "numH2">Talk to us</h2>
-        <p style = "width:500px;margin:auto;margin-top:1em" >Interested in reaching our team?Just pick up your phone an chat with a member of our support team</p>
+        <p style = "width:500px;margin:auto;margin-top:1em" >Interested in reaching our team?Just pick up your phone and chat with a member of our support team</p>
         <br>
         <h2 id = "tellNo"> +254712345678</h2>
         <br>
@@ -317,8 +317,6 @@ obj.forEach((element) => {
   });
   document.querySelector(".listColumn").appendChild(titles);
 });
-// let firstObj = obj[0];
-// appendFirstLetterMealCard(firstObj);
 }
 function appendLetterMealCard(obj){
   let detailcard = document.getElementById("mealCard");
@@ -534,7 +532,9 @@ function appendLetterMealCard(obj){
           <span id="commentSlot">
             <img id = "comImg" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>
             <span>
-              <span style = "display:inline-flex"><h5 id = "comName">You</h4><h6 id = "time"><i>just now</i></h6></span>
+              <span style = "display:inline-flex"><h5 id = "comName">You</h4><h6 id = "time"><i>just now</i></h6>
+              <i class="material-icons" id = "cancel">close</i>
+              </span>
               <h6 id = "actCom">${value}</h6>
               <img id = "userPic" src = "${value2}"></img>
             <span class = "votesCont" ">
@@ -674,7 +674,7 @@ function menuTitles(obj, meal) {
   appendMealCard(firstObj);
 }
 
-//appending individual recipes
+//appending individual recipes when the title is clicked
 function appendMealCard(obj) {
   let detailcard = document.getElementById("mealCard");
   detailcard.classList.remove("fadeIn2");
