@@ -7,12 +7,12 @@ Recipehub is a web application for looking up various recipes sourced from the p
 <a href = "https://spoonacular.com/food-api">spoonacular</a>
 
 ## Description
----
+
 The website runs on a single page hence fully relies on DOM manipulation to add custom elements to the page.Data is fetched from the apis above and then rendered on the page depending on what sections or categories the user chooses.
 
 
 ## Built with
----
+
 This website was built with the following technologies:
 
 - HTML
@@ -20,7 +20,7 @@ This website was built with the following technologies:
 - CSS
 
 ## Getting Started
----
+
 
 You can access recipehub using the following steps below:-
 - Using the live link below;
@@ -46,7 +46,7 @@ To install the repository on your machine follow the instructions below
 - Run the html file using a browser of your choice.
 
 ## PROJECT SETUP
----
+
 The app fetches data from a two public apis and a deployed json file.The website allows the user to do the following;
  
  - Seach for recipes by ingredients.
