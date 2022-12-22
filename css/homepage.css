@@ -198,14 +198,14 @@ nav ul li a:active {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-left: 5em;
+  margin-left: 3em;
   margin-top: 7em;
   height: 400px;
   width: 400px;
   border-radius: 50%;
 }
 #about {
-  margin-left: 6em;
+  margin-left: 4em;
   margin-top: 4em;
   height: 400px;
   width: 900px;
@@ -342,4 +342,35 @@ color: #f49d1a;
   font-size: 2.7em;
   color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#review p{
+  margin: 3em 1em 0em 2em;
+  font-size: 1.2em;
+  font-family: Karla;
+  font-weight: 200;
+  line-height: 1.4em;
+}
+#reviewUserDetails{
+  position: absolute;
+}
+.userImg{
+  display: inline-flex;
+  height: 60px;
+  width: 60px;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 2em;
+  margin-top: 5em;
+}
+.userName{
+  position: relative;
+  top: -1.5em;
+  margin-top: 0em;
+  display: inline-flex;
+  height: 2em;
+  margin-left: 2em;
+}
+.userName h6{
+  color: black;
+  font-family: Karla;
 }

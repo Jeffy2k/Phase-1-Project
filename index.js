@@ -117,6 +117,51 @@ function homePage() {
     </div>
   </div>
 <div class = "reviewsCont">
+<h6>REVIEWS</h6>
+<h1 id = "reviewTitle"><b>Trusted by millions of users worldwide</h1>
+  <div id = "review">
+  <p>
+  my life has never been the same ever since i came across recipehub.
+  <br>
+  <span style = "color:blue">#recipeparadise</span>
+  </p>
+  <br>
+  <br>
+  <br>
+  <div id = "reviewUserDetails">
+   <img src = "https://i.pinimg.com/736x/a0/8f/e3/a08fe3d68e8a450c21cf803d4c611b36.jpg"  class = "userImg">
+   </img>
+   <div class = "userName">
+   <h6>Peter Hays</h6>
+   </div>
+  </div>
+  </div>
+  <div id = "review">
+  <p>
+  <span style = "color:blue">@recipehub</span> is a great website for those nights when you just can't decide what to have for dinner.
+  </p>
+  <div style = "margin-top:4em" id = "reviewUserDetails">
+  <img src = "https://i.pinimg.com/564x/1b/3e/73/1b3e73825cfa39f556604b7d88f8fa7f.jpg" class = "userImg">
+   </img>
+   <div class = "userName">
+   <h6>Lewis Viera</h6>
+   </div>
+  </div>
+  </div>
+  <div id = "review">
+  <p>
+  I have been using recipehub for the past few weeks and i would definitely recommend it to anyone who needs great recipes.
+  </p>
+  <br>
+  <div id = "reviewUserDetails">
+  <img src = "https://i.pinimg.com/564x/d0/c4/1b/d0c41b2734aa37dd363f4cc9ebf8ff90.jpg"  class = "userImg">
+   </img>
+   <div class = "userName">
+   <h6>Denise Ortega</h6>
+   </div>
+  </div>
+  </div>
+</div>
 
   <div id = "aboutBox">
     <div id = "about">
@@ -164,9 +209,8 @@ function homePage() {
     document.getElementById("services").innerText = "A variety of Recipes";
   });
 }
-// homePage()
-// appendHomePage();
-//return home page
+
+//return to home page
 function returnHome() {
   console.log("clicked ");
   document.querySelector("body").innerHTML = "";
@@ -438,6 +482,21 @@ function appendLetterMealCard(obj){
     </div>
     <div class = "randomComment">
       <span id="commentSlot">
+        <img id = "comImg" src = "https://i.pinimg.com/564x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg"/>
+       <span>
+        <span style = "display:inline-flex"><h5 id = "comName">the8thsense</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
+        <h6 id = "actCom">The finals were rigged</h6>
+      <span class = "votesCont"">
+        <img id = "upVote5" src = "./images/up-arrow.png">
+        <h6 id = "voteUp5" class = "actVote1">3</h6>
+        <img id = "downVote5" src = "./images/down-arrow.png">
+        <h6 id = "voteDown5" class = "actVote2">320</h6>
+      </span>
+      </span>
+     </span>
+  </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
         <img id = "comImg" src = "https://i.pinimg.com/564x/50/a8/bd/50a8bdca9971873b79f6f63852212c26.jpg"/>
         <span>
           <span style = "display:inline-flex"><h5 id = "comName">glow_wworm2</h4><h6 id = "time"><i>2 months ago</i></h6></span>
@@ -470,21 +529,6 @@ function appendLetterMealCard(obj){
         </span>
       </span>
     </div>
-    <div class = "randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://i.pinimg.com/564x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg"/>
-       <span>
-        <span style = "display:inline-flex"><h5 id = "comName">the8thsense</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
-        <h6 id = "actCom">The finals was rigged</h6>
-      <span class = "votesCont"">
-        <img id = "upVote5" src = "./images/up-arrow.png">
-        <h6 id = "voteUp5" class = "actVote1">3</h6>
-        <img id = "downVote5" src = "./images/down-arrow.png">
-        <h6 id = "voteDown5" class = "actVote2">320</h6>
-      </span>
-      </span>
-     </span>
-  </div>
   </div>
   </div>
     `;
@@ -799,6 +843,21 @@ function appendMealCard(obj) {
     </div>
     <div class = "randomComment">
       <span id="commentSlot">
+        <img id = "comImg" src = "https://i.pinimg.com/564x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg"/>
+       <span>
+        <span style = "display:inline-flex"><h5 id = "comName">the8thsense</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
+        <h6 id = "actCom">The finals were rigged</h6>
+      <span class = "votesCont"">
+        <img id = "upVote5" src = "./images/up-arrow.png">
+        <h6 id = "voteUp5" class = "actVote1">3</h6>
+        <img id = "downVote5" src = "./images/down-arrow.png">
+        <h6 id = "voteDown5" class = "actVote2">320</h6>
+      </span>
+      </span>
+     </span>
+  </div>
+    <div class = "randomComment">
+      <span id="commentSlot">
         <img id = "comImg" src = "https://i.pinimg.com/564x/50/a8/bd/50a8bdca9971873b79f6f63852212c26.jpg"/>
         <span>
           <span style = "display:inline-flex"><h5 id = "comName">glow_wworm2</h4><h6 id = "time"><i>2 months ago</i></h6></span>
@@ -831,21 +890,6 @@ function appendMealCard(obj) {
         </span>
       </span>
     </div>
-    <div class = "randomComment">
-      <span id="commentSlot">
-        <img id = "comImg" src = "https://i.pinimg.com/564x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg"/>
-       <span>
-        <span style = "display:inline-flex"><h5 id = "comName">the8thsense</h4><h6 id = "time"><i>5 hrs ago</i></h6></span>
-        <h6 id = "actCom">The finals was rigged</h6>
-      <span class = "votesCont"">
-        <img id = "upVote5" src = "./images/up-arrow.png">
-        <h6 id = "voteUp5" class = "actVote1">3</h6>
-        <img id = "downVote5" src = "./images/down-arrow.png">
-        <h6 id = "voteDown5" class = "actVote2">320</h6>
-      </span>
-      </span>
-     </span>
-  </div>
   </div>
   </div>
     `;
