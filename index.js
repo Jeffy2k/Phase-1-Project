@@ -64,7 +64,7 @@ function appendLoginPage() {
     }
   });
 }
-appendLoginPage();
+// appendLoginPage();
 //Appends welcome message.
 function welcomeMessage(name) {
   document.getElementById("replace");
@@ -103,10 +103,11 @@ function homePage() {
         </ul>
     </nav>
     <div id="webname">
-      <h2>Recipehub</h2>
+      <h2 class = "pageName">Recipehub</h2>
     </div>
-    <h3 id = "slogan">Cook . Eat . Repeat</h3>
+    <h3 id = "slogan">Cook . Eat . Repeat<h3/>
   </div>
+ 
   <div id = "work">
     <h1 id="offer">What we offer :</h1>
     <div class = "offerContent"  id="offerCont">
@@ -161,7 +162,7 @@ function homePage() {
     document.getElementById("services").innerText = "A variety of Recipes";
   });
 }
-
+homePage()
 //return home page
 function returnHome() {
   console.log("clicked ");

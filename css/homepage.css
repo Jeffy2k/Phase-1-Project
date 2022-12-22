@@ -82,8 +82,9 @@ nav ul li a:active {
   scale: 0.95;
 }
 #webname {
+  position: relative;
   font-family: Laila-Bold;
-  width: 60%;
+  width: 40%;
   margin: auto;
   text-align: center;
   font-size: 5em;
@@ -91,9 +92,14 @@ nav ul li a:active {
 }
 
 #slogan {
+  opacity: 0;
+  animation: appear forwards;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  margin-top: 5.3em;
   color: antiquewhite;
   text-align: center;
-  font-size: 1.7em;
+  font-size: 1.9em;
   font-family: LobsterTwo;
 }
 
@@ -283,4 +289,29 @@ nav ul li a:active {
 }
 #mail1 {
   margin-top: 3em;
+}
+.pageName{
+  position: absolute;
+  top: 0;
+  animation : bounce linear 1s forwards;
+}
+
+@keyframes bounce {
+  from{
+    opacity: 0;
+    top: 0px;
+  }
+  to{
+    opacity: 1;
+    top: -40px;
+  }
+  
+}
+@keyframes appear{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
