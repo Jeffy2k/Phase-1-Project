@@ -118,7 +118,7 @@ function homePage() {
   <div id = "aboutBox">
     <div id = "about">
       <h1 id = "aboutTitle">About Us</h1>
-      <p id = "aboutDetails">Recipehub is a trusted resource for home cooks that offers a large variety of recipes spread across different mealtypes.Recipehub provides information on the ingredients and well outlined step by step instructions on how to prepare different meals.Over the years, since recipehub was started by Jeff Maina as, home cooking blog, it has drawn thousands of food enthusiasts from across the globe.</p>
+      <p id = "aboutDetails">Recipehub is a trusted resource for home cooks that offers a large variety of recipes spread across different mealtypes.Recipehub provides information on the ingredients and well-outlined step by step instructions on how to prepare different meals.Over the years, since recipehub was started by Jeff Maina as a homecooking blog, it has drawn thousands of food enthusiasts from across the globe.</p>
     </div>
     <div id = "aboutPic">
     </div>
