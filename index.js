@@ -64,7 +64,7 @@ function appendLoginPage() {
     }
   });
 }
-// appendLoginPage();
+appendLoginPage();
 //Appends welcome message.
 function welcomeMessage(name) {
   document.getElementById("replace");
@@ -116,6 +116,8 @@ function homePage() {
       <div class="rightBtnCont"><button id="rightBtn">>></button></div>
     </div>
   </div>
+<div class = "reviewsCont">
+
   <div id = "aboutBox">
     <div id = "about">
       <h1 id = "aboutTitle">About Us</h1>
@@ -162,7 +164,8 @@ function homePage() {
     document.getElementById("services").innerText = "A variety of Recipes";
   });
 }
-homePage()
+// homePage()
+// appendHomePage();
 //return home page
 function returnHome() {
   console.log("clicked ");
@@ -195,14 +198,14 @@ function menuPage() {
 </nav>
 
 <div id="webname">
-  <h2>Recipes</h2>
+  <h2 class= "pageName">Recipes</h2>
 </div>
 </div>
 <div id="topContainer">
  <div id="top1">
  <span style="display: inline-flex">
-  <input type="search" id = "itemSearch"></input>
-  <i id="searchIcon" class="material-icons">search</i>
+ <i id="searchIcon" class="material-icons">search</i>
+  <input type="search" class = "itemSearch1" id = "itemSearch"></input>
   <button onclick="fetchFoodByIngredients()" id="btnSearch">Search by ingredients</button>
   <button onclick="searchVideos()" id="btnSearch2">Search Video</button>
  </span>
@@ -241,6 +244,10 @@ function menuPage() {
 <div id = "mainArea">
 </div>
   `;
+  document.getElementById('searchIcon').addEventListener('click', ()=>{
+    document.getElementById('itemSearch').classList.remove('itemSearch1');
+    document.getElementById('itemSearch').classList.add('itemSearch2');
+  })
   let mainArea = document.getElementById("mainArea");
   mainArea.innerHTML = `
 <div class="grid-container">
@@ -272,6 +279,8 @@ function menuPage() {
   </div>
 `;
 }
+
+// menuPage()
 
 //fetches recipes by first letter
 function fetchByFirstLetter(letter){
