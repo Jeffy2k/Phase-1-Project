@@ -42,51 +42,6 @@
   margin: 0;
   padding: 0;
 }
-#header {
-  margin-top: 0;
-  background-image: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 1478px;
-  height: 650px;
-}
-nav {
-  width: 100%;
-  display: inline-block;
-}
-
-nav ul {
-  margin-bottom: 2em;
-  display: flex;
-}
-
-#first,
-#second,
-#third {
-  top: 0;
-  margin-top: 2em;
-  position: relative;
-}
-#last {
-  margin-top: 2em;
-}
-nav ul li a {
-  font-family: Laila-Bold;
-  display: block;
-  text-align: center;
-  padding: 10px 40px 10px 40px;
-  text-decoration: none;
-  color: antiquewhite;
-  font-size: 1.3em;
-  transition: 0.2s all ease-in-out;
-}
-nav ul li a:hover {
-  color: #f49d1a;
-}
-nav ul li a:active {
-  scale: 0.95;
-}
 #webname {
   font-family: LobsterTwo;
   width: 60%;

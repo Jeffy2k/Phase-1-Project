@@ -64,7 +64,7 @@ function appendLoginPage() {
     }
   });
 }
-appendLoginPage();
+// appendLoginPage();
 //Appends welcome message.
 function welcomeMessage(name) {
   document.getElementById("replace");
@@ -269,7 +269,7 @@ function homePage() {
     document.getElementById("services").innerText = "A variety of Recipes";
   });
 }
-
+homePage()
 function toggleVis(value){
   var x = document.getElementById(value);
   if (x.type === "password") {
