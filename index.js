@@ -20,15 +20,15 @@ function appendLoginPage() {
             <div id="input-icons">
               <div id="inside">
                 <i id="person"class="material-icons">person</i>
-                <input type="text" id="fname" placeholder="Name"/>
+                <input class = "loginForm" type="text" id="fname" placeholder="Name"/>
               </div>
               <div id="icon-inside">
                 <i id="email" class="material-icons">mail</i>
-                <input type="email" id="email" placeholder="Email.." />
+                <input class = "loginForm" type="email" id="email" placeholder="Email.." />
              </div> 
              <div id="icon-inside">
                <i id="pass"class="material-icons">lock</i>
-               <input type="number" id="password" placeholder="password" /> 
+               <input class = "loginForm" type="number" id="password" placeholder="password" /> 
              </div>
              <div id="check">
                <label class="checkbox">
@@ -171,31 +171,91 @@ function homePage() {
     <div id = "aboutPic">
     </div>
   </div>
+  <div id = 'joinUs'>
+  <h1 id = "joinmsg">Don't have <br>an account?</h1>
+  <p id ='createMsg'>join the <span style = "color:orange;font-family:LobsterTwo"> recipehub </span> community<br> today by creating an account</p>
+  </div>
   <div id = "contacts">
-    <div id = "mainContact">
-      <div class = "contactChild" id = "numbers">
-        <i id="call" class="material-icons">call</i>
-        <h2 class = "numH2">Talk to us</h2>
-        <p style = "width:500px;margin:auto;margin-top:1em" >Interested in reaching our team?Just pick up your phone and chat with a member of our support team</p>
-        <br>
-        <h2 id = "tellNo"> +254712345678</h2>
-        <br>
-        <br>
-      </div>
-      <div class = "contactChild" id = "socialplatforms">
-        <i id="call" class="material-icons">forum</i>
-        <p style = "width:500px;margin:auto;margin-top:1em" >You can also reach us through;</p>
-        <span class="mail" id = "mail1" style = "display:inline-flex"><img class ="social" src = "./images/gmail.png"><h5>recipehub@gmail.com</h5></span>
-        <br>
-        <span class="mail" style = "display:inline-flex"><img class ="social" src = "./images/instagram.png"><h5>_recipe.hub</h5></span>
-        <br>
-        <span class="mail" style = "display:inline-flex"><img class ="social" src = "./images/facebook.png"><h5>recipe.hub</h5></span>
-        <br>
-        <span class="mail" style = "display:inline-flex"><img  class ="social" src = "./images/twitter.png"><h5>recipe.hub</h5></span>
-      </div>
+   <div id = "social">
+   <h1 id = "socialTitle">info</h1>
+   <div>
+   <span class = 'socialHandles' style = "display: inline-flex">
+   <img src = "./images/gmail.png">
+   <h6>recipehub@gmail.com</h6>
+   </span>
+   <br/>
+   <span class = 'socialHandles' style = "display: inline-flex">
+   <img src = "./images/facebook.png">
+   <h6>recipehub</h6>
+   </span>
+   <br/>
+   <span class = 'socialHandles' style = "display: inline-flex">
+   <img src = "./images/instagram.png">
+   <h6>recipe_hub</h6>
+   </span>
+   <br/>
+   <span class = 'socialHandles' style = "display: inline-flex">
+   <img src = "./images/twitter.png">
+   <h6>recipehub</h6>
+   </span>
+   </div>
+   </div>
+   <div id = "signUp">
+   <div id = "form">
+   <h1 class = "signUpTitle">Sign up</h1>
+   <div style = "height:2.5em"> <h6 id= "signUpErr"></h6></div>
+   <form>
+   <label for "text">NAME</label>
+   <br>
+   <input id = "signUpName" class = "signUpForm" type = "text" required>
+   <br />
+   <label for "email">EMAIL</label>
+   <br>
+   <input id = "signUpEmail" class = "signUpForm" type = "email" required>
+   <br />
+   <label for "number">PASSWORD</label>
+   <br>
+  <input id= "pass1" class = "signUpForm" type = "password" minLength = '8' maxLength = '16' title="Must contain at least 8 or more characters" required>
+   <i onclick="toggleVis('pass1')" id="passVis" class="material-icons">visibility</i>
+   <br />
+   <div style = "height:1.5em"> <h6 id= "passErr"></h6></div>
+   <label for "number">REPEAT PASSWORD</label>
+   <br>
+   <input id= "pass2" class = "signUpForm" type = "password" minLength = '8' 'maxLength = '16' title="Must contain at least 8 or more characters" required>
+   <i onclick="toggleVis('pass2')" id="passVis" class="material-icons">visibility</i>
+   <br />
+   <input type = "checkbox" id = "signUpRadio" required>
+   <label style = "color:black;margin-left:0.5em" for "signUpRadio">By signing up i agree to the terms and conditions.</label>
+   <br>
+   <button type = "submit" class = "signUpBtn">Sign up</button>
+   </form>
+   </div>
+   <div id = "pulse">
+   <div id = "loader">
+   </div>
+   <h6 id = "waitMsg"></h6>
+   </div>
+   </div>
   </div>
   </div>
   `;
+  document.querySelector('.signUpBtn').addEventListener('click', (e)=>{
+   let name = document.getElementById('signUpName').value
+   let email = document.getElementById('signUpEmail').value
+   let pass1 = document.getElementById('pass1').value
+   let pass2 = document.getElementById('pass2').value
+   if(name !==  '' && email !== '' && pass1 !== '' && pass2 !== ''){
+    if(pass1.length >= 8){
+      if(pass1 === pass2){
+        if(signUpRadio.checked === true){
+      e.preventDefault();
+        signUpSuccess()}}
+     else if(pass1 !== pass2){
+      e.preventDefault();
+      document.getElementById('passErr').textContent = "* wrong password"
+     }}}
+    }
+  )
   document.getElementById("rightBtn").addEventListener("click", () => {
     console.log("clicked");
     document.getElementById("offerCont").classList.remove("offerContent");
@@ -208,6 +268,32 @@ function homePage() {
     document.getElementById("offerCont").classList.add("offerContent");
     document.getElementById("services").innerText = "A variety of Recipes";
   });
+}
+
+function toggleVis(value){
+  var x = document.getElementById(value);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function signUpSuccess(){
+  document.getElementById('pulse').classList.toggle('pulsify')
+  document.getElementById("loader").classList.toggle('loader');
+  document.getElementById("waitMsg").innerHTML = 'just a minute :)';
+  setTimeout(()=>{
+  document.getElementById("loader").classList.remove('loader');
+  document.getElementById("waitMsg").innerHTML = ''
+  document.getElementById('pulse').classList.toggle('pulsify2');
+  },4000)
+  setTimeout(()=>{
+    document.getElementById("waitMsg").style.top = "290px";
+    document.getElementById("waitMsg").style.left = "35px";
+    document.getElementById("waitMsg").style.fontSize = "2.8em";
+    document.getElementById("waitMsg").classList.toggle('waitMsg2');
+    document.getElementById("waitMsg").innerHTML = 'welcome to the family :)';
+  },6000)
 }
 
 //return to home page

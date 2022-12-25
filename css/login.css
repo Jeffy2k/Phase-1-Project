@@ -18,9 +18,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-input[type="text"],
-input[type="email"],
-input[type="number"] {
+.loginForm {
   width: 85%;
   padding: 12px;
   background-color: #fff;
@@ -34,18 +32,16 @@ input[type="number"] {
   top: 0;
 }
 
-input[type="email"]:hover,
-input[type="text"]:hover,
-input[type="number"]:hover {
+.loginForm:hover{
   transform: translate(-10px);
   scale: 1.02;
   background-color: beige;
   transition: 0.7s;
   border: none;
 }
-input[type="email"]:focus,
+#email:focus,
 #fname:focus,
-input[type="number"]:focus {
+#password:focus {
   border: none;
   background-color: #fff8dc;
 }
