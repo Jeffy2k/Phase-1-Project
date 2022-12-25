@@ -28,7 +28,7 @@ function appendLoginPage() {
              </div> 
              <div id="icon-inside">
                <i id="pass"class="material-icons">lock</i>
-               <input class = "loginForm" type="number" id="password" placeholder="password" /> 
+               <input class = "loginForm" type="password" id="password" placeholder="password" /> 
              </div>
              <div id="check">
                <label class="checkbox">
