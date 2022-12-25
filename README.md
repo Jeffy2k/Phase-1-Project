@@ -45,7 +45,7 @@ To install the repository on your machine follow the instructions below
 
 - Run the html file using a browser of your choice.
 
-## PROJECT SETUP
+## Project Setup
 
 The app fetches data from a two public apis and a deployed json file.The website allows the user to do the following;
  
@@ -58,7 +58,7 @@ The app fetches data from a two public apis and a deployed json file.The website
  - Post your attempt on the recipe.
  - Upvote or downvote other peoples' attempts/comments.
 
-#  RUNNING THE APPLICATION
+#  Running the application
 
 Click <a href = "https://jeffy2k.github.io/Phase-1-Project/">RecipeHub.com</a> to go directly to the webpage or if you had already installed the repo on your machine run the index.html file using a browser of your choice.
 
@@ -69,10 +69,11 @@ Click <a href = "https://jeffy2k.github.io/Phase-1-Project/">RecipeHub.com</a> t
 - The user can also check out a list of recipes starting with a certain letter by clicking on the letter.
 
 <b>NOTE:</b>The 'search by ingredients' results don't have instructions on how to prepare the meal.
-# AUTHOR.
+
+# Author.
 This project was done by:
 
  Jeff Maina
 
-# LICENSE.
+# License.
 This project is under license Apache 2.0 
